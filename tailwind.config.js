@@ -43,11 +43,26 @@ module.exports = {
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         glow: 'glow 3s ease-in-out infinite alternate',
+        // Restauradas: existiam na versao publicada direto na Vercel pela
+        // Antigravity, que nunca foi commitada. Quando o cache do www expirou,
+        // o site passou a servir o repositorio — que nunca teve estas —, e a
+        // pagina ficou parada.
+        float: 'float 6s ease-in-out infinite',
+        'float-delayed': 'float 6s ease-in-out 3s infinite',
+        'flow-line': 'flowLine 3s linear infinite',
       },
       keyframes: {
         glow: {
           '0%': { opacity: '0.3', filter: 'blur(20px)' },
           '100%': { opacity: '0.7', filter: 'blur(30px)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        flowLine: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '200% 50%' },
         },
       },
     },
