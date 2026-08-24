@@ -1,0 +1,13 @@
+{
+  "name": "avanco-ai-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page da Avanço AI — HTML estático com Tailwind compilado",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/style.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

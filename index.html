@@ -4,129 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Avanço AI | Secretária Virtual & Agendamento Inteligente para Clínicas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <!-- ATENCAO: o Tailwind aqui e COMPILADO, nao mais o CDN.
+         Se voce adicionar/alterar classes do Tailwind neste HTML, rode
+         `npm run build:css` (ou deixe `npm run watch:css` rodando) — senao
+         a classe nova nao existe no assets/style.css e simplesmente nao
+         aplica estilo nenhum. O CSS gerado e versionado de proposito: o
+         deploy na Vercel continua 100% estatico, sem passo de build. -->
+    <link rel="stylesheet" href="/assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
     
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                screens: {
-                    'xs': '375px',
-                    'sm': '640px',
-                    'md': '768px',
-                    'lg': '1024px',
-                    'xl': '1280px',
-                    '2xl': '1536px',
-                },
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                    colors: {
-                        amber: {
-                            400: '#FBBF24',
-                            500: '#F59E0B',
-                            600: '#D97706',
-                        },
-                        brand: {
-                            gold: '#E5A93C',
-                            goldLight: '#FDE047',
-                            goldDark: '#B45309',
-                            dark: '#07090E',
-                            card: '#0D111A',
-                            cardBorder: 'rgba(255, 255, 255, 0.08)',
-                            cardBorderHover: 'rgba(229, 169, 60, 0.35)',
-                        }
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'glow': 'glow 3s ease-in-out infinite alternate',
-                    },
-                    keyframes: {
-                        glow: {
-                            '0%': { opacity: '0.3', filter: 'blur(20px)' },
-                            '100%': { opacity: '0.7', filter: 'blur(30px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        *, *::before, *::after { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-            background-color: #05070B;
-            color: #E2E8F0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        body {
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(229, 169, 60, 0.12) 0%, transparent 60%),
-                radial-gradient(circle at 100% 40%, rgba(236, 72, 153, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 0% 80%, rgba(229, 169, 60, 0.05) 0%, transparent 50%);
-        }
-
-        .bg-grid-pattern {
-            background-size: 32px 32px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-        }
-
-        .glow-text {
-            background: linear-gradient(135deg, #FFF 20%, #E5A93C 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .gold-gradient-bg {
-            background: linear-gradient(135deg, #E5A93C 0%, #F59E0B 50%, #D97706 100%);
-        }
-
-        .glass-panel {
-            background: rgba(13, 17, 26, 0.82);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .glass-panel-gold {
-            background: rgba(13, 17, 26, 0.90);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(229, 169, 60, 0.32);
-            box-shadow: 0 10px 30px -10px rgba(229, 169, 60, 0.2);
-        }
-
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #07090E; }
-        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #E5A93C; }
-
-        .reveal-item {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        input[type="range"] {
-            touch-action: pan-y;
-        }
-    </style>
 </head>
 <body class="relative min-h-screen bg-grid-pattern selection:bg-amber-500/30 selection:text-amber-300">
 
