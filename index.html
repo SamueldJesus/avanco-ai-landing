@@ -14,6 +14,14 @@
         tailwind.config = {
             darkMode: 'class',
             theme: {
+                screens: {
+                    'xs': '375px',
+                    'sm': '640px',
+                    'md': '768px',
+                    'lg': '1024px',
+                    'xl': '1280px',
+                    '2xl': '1536px',
+                },
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -192,10 +200,10 @@
                         <span class="truncate">IA para Clínicas de Estética, Harmonização & Odonto</span>
                     </div>
 
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.15] tracking-tight text-white break-words">
+                    <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-[1.12] tracking-tight text-white break-words">
                         Sua Clínica com Agenda Cheia e <br class="hidden sm:inline">
                         <span class="glow-text">Atendimento em 3 Segundos.</span>
-                        <span class="block text-xl sm:text-2xl md:text-3xl text-neutral-300 font-bold mt-2">Mesmo às 22h ou no Domingo.</span>
+                        <span class="block text-xl xs:text-2xl sm:text-3xl md:text-3xl text-neutral-300 font-bold mt-2">Mesmo às 22h ou no Domingo.</span>
                     </h1>
 
                     <p class="text-sm sm:text-base md:text-lg text-neutral-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
@@ -203,26 +211,26 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-1">
-                        <a href="#contato" class="gold-gradient-bg px-6 sm:px-8 py-3.5 sm:py-4 text-black font-extrabold rounded-full text-sm sm:text-base hover:opacity-95 shadow-xl shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
+                        <a href="#contato" class="gold-gradient-bg w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-black font-extrabold rounded-full text-sm sm:text-base hover:opacity-95 shadow-xl shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
                             <i data-lucide="play" class="w-4 h-4 fill-current"></i>
                             <span>Testar no WhatsApp da Minha Clínica</span>
                         </a>
-                        <a href="#como-funciona" class="px-5 sm:px-6 py-3.5 sm:py-4 glass-panel hover:bg-white/5 border border-white/10 text-neutral-200 font-semibold rounded-full text-xs sm:text-sm flex items-center justify-center gap-2 transition-all">
+                        <a href="#como-funciona" class="w-full sm:w-auto px-5 sm:px-6 py-3.5 sm:py-4 glass-panel hover:bg-white/5 border border-white/10 text-neutral-200 font-semibold rounded-full text-xs sm:text-sm flex items-center justify-center gap-2 transition-all">
                             <span>Ver Como Funciona</span>
                             <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-amber-400"></i>
                         </a>
                     </div>
 
-                    <div class="pt-4 sm:pt-6 border-t border-white/5 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-[11px] sm:text-xs text-neutral-400 text-left">
-                        <div class="flex items-center gap-2">
+                    <div class="pt-4 sm:pt-6 border-t border-white/5 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-[11px] sm:text-xs text-neutral-400 text-center sm:text-left">
+                        <div class="flex items-center gap-2 justify-center sm:justify-start">
                             <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
                             <span>Garantia de 14 Dias</span>
                         </div>
-                        <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-2 justify-center sm:justify-start">
                             <i data-lucide="calendar" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
                             <span>Sincronização com Agenda</span>
                         </div>
-                        <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-2 justify-center sm:justify-start">
                             <i data-lucide="bell" class="w-4 h-4 text-blue-400 flex-shrink-0"></i>
                             <span>Lembretes Anti-Falta (-80%)</span>
                         </div>
@@ -495,9 +503,9 @@
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
                 
-                <div class="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                <div class="glass-panel rounded-3xl p-5 sm:p-7 md:p-8 flex flex-col justify-between">
                     <div>
                         <div class="text-[11px] font-mono uppercase text-neutral-400 mb-1.5">Para Profissional Autônomo / 1 Sala</div>
                         <h3 class="text-xl sm:text-2xl font-bold text-white">Consultório Solo</h3>
@@ -506,7 +514,7 @@
                             <span class="text-xs text-neutral-400 block mt-1">Taxa Única de Implementação</span>
                             <div class="text-xs sm:text-sm text-amber-400 font-bold mt-2">+ R$ 790 /mês (servidor + IA + suporte)</div>
                         </div>
-                        <ul class="space-y-3 text-xs text-neutral-300 border-t border-white/5 pt-5 mb-6">
+                        <ul class="space-y-2.5 text-xs text-neutral-300 border-t border-white/5 pt-4 mb-6">
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i> Secretária IA para 1 profissional / agenda</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i> Treinamento com tabela de procedimentos</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i> Agendamento no Google Agenda</li>
@@ -519,7 +527,7 @@
                     </a>
                 </div>
 
-                <div class="glass-panel-gold rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative shadow-2xl">
+                <div class="glass-panel-gold rounded-3xl p-5 sm:p-7 md:p-8 flex flex-col justify-between relative shadow-2xl">
                     <div class="inline-block self-start sm:self-auto sm:absolute -top-3.5 sm:left-1/2 sm:-translate-x-1/2 gold-gradient-bg text-black text-[10px] sm:text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-lg mb-3 sm:mb-0">
                         Mais Escolhido por Clínicas
                     </div>
@@ -531,7 +539,7 @@
                             <span class="text-xs text-neutral-400 block mt-1">Taxa Única de Implementação</span>
                             <div class="text-xs sm:text-sm text-amber-400 font-bold mt-2">+ R$ 1.290 /mês (servidor + IA + suporte VIP)</div>
                         </div>
-                        <ul class="space-y-3 text-xs text-neutral-200 border-t border-white/10 pt-5 mb-6">
+                        <ul class="space-y-2.5 text-xs text-neutral-200 border-t border-white/10 pt-4 mb-6">
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> <strong>Tudo do plano Consultório Solo</strong></li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> <strong>Multi-Agendas (distribuição por profissional)</strong></li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i> <strong>Painel para a Recepção (Chatwoot)</strong></li>
@@ -545,7 +553,7 @@
                     </a>
                 </div>
 
-                <div class="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                <div class="glass-panel rounded-3xl p-5 sm:p-7 md:p-8 flex flex-col justify-between sm:col-span-2 lg:col-span-1">
                     <div>
                         <div class="text-[11px] font-mono uppercase text-neutral-400 mb-1.5">Redes, Franquias & Hospitais Dia</div>
                         <h3 class="text-xl sm:text-2xl font-bold text-white">Redes & Franquias</h3>
@@ -554,7 +562,7 @@
                             <span class="text-xs text-neutral-400 block mt-1">Taxa de Implementação</span>
                             <div class="text-xs sm:text-sm text-amber-400 font-bold mt-2">+ R$ 2.490 /mês (infraestrutura dedicada)</div>
                         </div>
-                        <ul class="space-y-3 text-xs text-neutral-300 border-t border-white/5 pt-5 mb-6">
+                        <ul class="space-y-2.5 text-xs text-neutral-300 border-t border-white/5 pt-4 mb-6">
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i> Múltiplas unidades e números de WhatsApp</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i> Integração com ERP/Software Clínico</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400 flex-shrink-0"></i> Disparo de confirmação de sinal via Pix</li>
