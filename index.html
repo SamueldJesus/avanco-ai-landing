@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Avanço AI | Secretária Virtual & Agendamento Inteligente para Clínicas</title>
+    <title>Avanço AI | Plataforma de Captação, Agenda e CRM para Clínicas</title>
     <!-- ATENCAO: o Tailwind aqui e COMPILADO, nao mais o CDN.
          Se voce adicionar/alterar classes do Tailwind neste HTML, rode
          `npm run build:css` (ou deixe `npm run watch:css` rodando) — senao
@@ -60,7 +60,7 @@
 
             <ul class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-600">
                 <li><a href="#como-funciona" class="hover:text-amber-600 transition-colors">Como Funciona</a></li>
-                <li><a href="#procedimentos" class="hover:text-amber-600 transition-colors">Procedimentos</a></li>
+                <li><a href="#recursos" class="hover:text-amber-600 transition-colors">Recursos</a></li>
                 <li><a href="#calculadora" class="hover:text-amber-600 transition-colors">Calculadora</a></li>
                 <li><a href="#planos" class="hover:text-amber-600 transition-colors">Planos</a></li>
                 <li><a href="#faq" class="hover:text-amber-600 transition-colors">Dúvidas</a></li>
@@ -82,7 +82,7 @@
 
         <div id="mobile-menu" class="hidden lg:hidden bg-brand-panel/98 border-b border-slate-200 px-6 py-4 space-y-3 text-sm font-medium text-slate-700">
             <a href="#como-funciona" class="block py-1 hover:text-amber-600 mobile-nav-link">Como Funciona</a>
-            <a href="#procedimentos" class="block py-1 hover:text-amber-600 mobile-nav-link">Procedimentos Atendidos</a>
+            <a href="#recursos" class="block py-1 hover:text-amber-600 mobile-nav-link">Recursos da Plataforma</a>
             <a href="#calculadora" class="block py-1 hover:text-amber-600 mobile-nav-link">Calculadora de Faturamento</a>
             <a href="#planos" class="block py-1 hover:text-amber-600 mobile-nav-link">Planos & Valores</a>
             <a href="#faq" class="block py-1 hover:text-amber-600 mobile-nav-link">Dúvidas Frequentes</a>
@@ -95,18 +95,18 @@
 
                 <div class="lg:col-span-7 min-w-0 space-y-5 sm:space-y-7 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 border border-amber-300/80 text-amber-900 text-[11px] sm:text-xs font-semibold max-w-full shadow-xs">
-                        <i data-lucide="heart-pulse" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i>
-                        <span class="truncate">IA para Clínicas de Estética, Harmonização & Odonto</span>
+                        <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i>
+                        <span class="truncate">Plataforma de Captação, Agenda e CRM para Clínicas</span>
                     </div>
 
                     <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-[1.12] tracking-tight text-slate-900 break-words">
-                        Sua Clínica com Agenda Cheia e <br class="hidden sm:inline">
-                        <span class="glow-text">Atendimento em 3 Segundos.</span>
-                        <span class="block text-xl xs:text-2xl sm:text-3xl md:text-3xl text-slate-600 font-bold mt-2">Mesmo às 22h ou no Domingo.</span>
+                        Sua Clínica com Agenda Cheia, <br class="hidden sm:inline">
+                        <span class="glow-text">do Primeiro Contato ao Retorno.</span>
+                        <span class="block text-xl xs:text-2xl sm:text-3xl md:text-3xl text-slate-600 font-bold mt-2">Não é só um chatbot de WhatsApp.</span>
                     </h1>
 
                     <p class="text-sm sm:text-base md:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                        Pare de perder pacientes que mandam mensagem fora do horário comercial e fecham na concorrência. Instalamos uma <strong class="text-slate-900 font-bold">Secretária de IA com a identidade da sua clínica</strong> que tira dúvidas de procedimentos (Botox, Clareamento, Implantes), informa valores e agenda direto no Google Agenda.
+                        Pare de perder pacientes que somem no meio do caminho. A Avanço AI reúne <strong class="text-slate-900 font-bold">Recepção por IA no WhatsApp, Agenda automática e CRM de pacientes</strong> — e, no plano Pro, reputação no Google, pagamentos e reativação — tudo em um único sistema feito para clínicas.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-1">
@@ -114,8 +114,8 @@
                             <i data-lucide="play" class="w-4 h-4 fill-current"></i>
                             <span>Testar no WhatsApp da Minha Clínica</span>
                         </a>
-                        <a href="#como-funciona" class="w-full sm:w-auto px-5 sm:px-6 py-3.5 sm:py-4 bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-semibold rounded-md text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs">
-                            <span>Ver Como Funciona</span>
+                        <a href="#recursos" class="w-full sm:w-auto px-5 sm:px-6 py-3.5 sm:py-4 bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-semibold rounded-md text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs">
+                            <span>Ver Todos os Recursos</span>
                             <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-amber-600"></i>
                         </a>
                     </div>
@@ -123,11 +123,11 @@
                     <div class="pt-4 sm:pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-[11px] sm:text-xs text-slate-600 text-center sm:text-left">
                         <div class="flex items-center gap-2 justify-center sm:justify-start">
                             <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
-                            <span>Garantia de 14 Dias</span>
+                            <span>Sem Taxa de Implementação</span>
                         </div>
                         <div class="flex items-center gap-2 justify-center sm:justify-start">
-                            <i data-lucide="calendar" class="w-4 h-4 text-amber-600 flex-shrink-0"></i>
-                            <span>Sincronização com Agenda</span>
+                            <i data-lucide="kanban-square" class="w-4 h-4 text-amber-600 flex-shrink-0"></i>
+                            <span>CRM de Pacientes Incluso</span>
                         </div>
                         <div class="flex items-center gap-2 justify-center sm:justify-start">
                             <i data-lucide="bell" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
@@ -152,7 +152,7 @@
                             <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i>
                         </div>
                         <div>
-                            <div class="text-[10px] font-bold text-slate-900">Google Agenda</div>
+                            <div class="text-[10px] font-bold text-slate-900">Agenda Sincronizada</div>
                             <div class="text-[9px] text-emerald-700 font-semibold">Horário Reservado</div>
                         </div>
                     </div>
@@ -199,6 +199,70 @@
     <section id="como-funciona" class="reveal-item py-14 sm:py-20 border-t border-slate-200 bg-slate-100/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+                    Como Funciona
+                </span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
+                    Da Primeira Mensagem ao Paciente Fidelizado
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2">
+                    Cada paciente segue um fluxo automático — sem depender da sua memória ou de planilha.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+
+                <div class="glass-panel rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm relative">
+                    <span class="text-[11px] font-mono font-bold text-amber-600">Etapa 01</span>
+                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center my-3 border border-amber-100">
+                        <i data-lucide="message-circle-plus" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Novo Lead</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Paciente manda mensagem no WhatsApp, comenta no Instagram ou preenche um anúncio.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm relative">
+                    <span class="text-[11px] font-mono font-bold text-amber-600">Etapa 02</span>
+                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center my-3 border border-amber-100">
+                        <i data-lucide="bot" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">IA Qualifica & Agenda</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        A recepção de IA tira dúvidas, informa valores e marca direto na agenda.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm relative">
+                    <span class="text-[11px] font-mono font-bold text-amber-600">Etapa 03</span>
+                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center my-3 border border-amber-100">
+                        <i data-lucide="kanban-square" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">CRM Acompanha</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Cada paciente vira um card no funil: Lead, Agendado, Compareceu, Retorno.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-5 sm:p-6 border-2 border-amber-400 shadow-md relative">
+                    <span class="text-[11px] font-mono font-bold text-amber-600 inline-flex items-center gap-1">Etapa 04 <span class="bg-amber-100 text-amber-900 text-[9px] font-bold px-1.5 py-0.5 rounded-full border border-amber-300">Pro</span></span>
+                    <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center my-3 border border-emerald-100">
+                        <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Reativação Automática</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Sumiu por 6 meses? O sistema chama esse paciente de volta sozinho.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal-item py-14 sm:py-20 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
                 <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-red-700 bg-red-100 px-3 py-1 rounded-full border border-red-200">
                     O Custo Oculto
                 </span>
@@ -208,7 +272,7 @@
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
-                
+
                 <div class="glass-panel rounded-xl p-6 sm:p-8 border-red-200 shadow-sm">
                     <div class="w-11 h-11 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-5 border border-red-100">
                         <i data-lucide="moon" class="w-5 h-5"></i>
@@ -231,11 +295,135 @@
 
                 <div class="glass-panel rounded-xl p-6 sm:p-8 border-blue-200 shadow-sm sm:col-span-2 lg:col-span-1">
                     <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-5 border border-blue-100">
-                        <i data-lucide="phone-call" class="w-5 h-5"></i>
+                        <i data-lucide="list-x" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Recepção Sobrecarregada</h3>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Paciente Vira Estatística Perdida</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Sua secretária fica presa no celular respondendo *"quanto custa a limpeza?"* e *"onde fica?"* em vez de dar atenção calorosa e vender pacotes presenciais.
+                        Sem um funil organizado, você não sabe quantos leads viraram consulta, quantos sumiram ou quando reativar. A clínica cresce no escuro, sem CRM.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="reveal-item py-14 sm:py-20 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+                    Tudo Isso é a Avanço AI
+                </span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
+                    Uma Plataforma. Do Primeiro Contato ao Paciente Fidelizado.
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2">
+                    Recursos liberados conforme o plano — veja qual clínica combina com você mais abaixo.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+
+                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
+                            <i data-lucide="message-square-text" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">Start</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Recepção por IA no WhatsApp</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Treinada nos seus procedimentos, tira dúvidas e informa valores 24 horas por dia.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
+                            <i data-lucide="calendar-clock" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">Start</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Agenda & Confirmação</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Marca direto na sua agenda e confirma automaticamente 24h e 2h antes da consulta.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
+                            <i data-lucide="kanban-square" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">Start</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">CRM & Funil de Pacientes</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Cada lead em um estágio: Novo, Qualificado, Agendado, Retorno. Nada se perde.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
+                            <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">Start</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">App Móvel para Sua Equipe</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Sua secretária acompanha e assume conversas de qualquer lugar, pelo celular.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-6 flex flex-col border-2 border-amber-400 shadow-md">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+                            <i data-lucide="star" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-wider bg-amber-500 text-white px-2 py-0.5 rounded-full">Pro</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Gestão de Reputação</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Pede e publica avaliações 5 estrelas no Google automaticamente após a consulta.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-6 flex flex-col border-2 border-amber-400 shadow-md">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-wider bg-amber-500 text-white px-2 py-0.5 rounded-full">Pro</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Pagamentos & Sinal</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Envia link de cobrança e confirma o sinal antes de blindar a vaga na agenda.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-6 flex flex-col border-2 border-amber-400 shadow-md">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+                            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-wider bg-amber-500 text-white px-2 py-0.5 rounded-full">Pro</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Relatórios de Anúncios</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Veja quanto cada campanha realmente trouxe de paciente agendado, não só clique.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-6 flex flex-col border-2 border-amber-400 shadow-md">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+                            <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-wider bg-amber-500 text-white px-2 py-0.5 rounded-full">Pro</span>
+                    </div>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Reativação Automática</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Chama de volta pacientes sumidos há 6 meses ou mais, sozinho, sem esforço seu.
                     </p>
                 </div>
 
@@ -246,7 +434,7 @@
     <section id="calculadora" class="reveal-item py-14 sm:py-20 border-t border-slate-200 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <div class="glass-panel-gold rounded-xl p-6 sm:p-10 md:p-12 shadow-xl border border-amber-300">
-                
+
                 <div class="text-center mb-8 sm:mb-10">
                     <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
                         Simulador Financeiro
@@ -255,12 +443,12 @@
                         Quanto Sua Clínica Pode Faturar a Mais Recuperando Vagas?
                     </h2>
                     <p class="text-slate-600 text-xs sm:text-sm mt-2">
-                        Simule a receita extra ao responder pacientes em 3 segundos e reduzir faltas:
+                        Simule a receita extra ao responder pacientes em segundos e reduzir faltas — sem nunca mais perder um lead no CRM:
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
-                    
+
                     <div class="space-y-5 sm:space-y-6">
                         <div>
                             <div class="flex justify-between text-xs sm:text-sm font-semibold mb-2">
@@ -297,74 +485,6 @@
         </div>
     </section>
 
-    <section id="procedimentos" class="reveal-item py-14 sm:py-20 border-t border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-                    Especializada na Sua Rotina
-                </span>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
-                    A IA já Vem Treinada com Seus Procedimentos
-                </h2>
-                <p class="text-slate-600 text-xs sm:text-sm mt-2">
-                    Alinhada às normas éticas e personalizada com a sua tabela de preços.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-5 sm:gap-8">
-                
-                <div class="glass-panel rounded-xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-sm hover:shadow-md transition-all">
-                    <div>
-                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
-                            <i data-lucide="sparkles" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Estética & Harmonização Facial</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-                            Explica sobre Botox, Preenchimento labial, Bioestimuladores de Colágeno, Fios de PDO e Limpeza de Pele com linguagem refinada e acolhedora.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-200 pt-4">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Informa faixas de valores e parcelamento</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Envia cuidados pré e pós-procedimento</li>
-                    </ul>
-                </div>
-
-                <div class="glass-panel rounded-xl p-6 sm:p-8 flex flex-col justify-between border-2 border-amber-400 shadow-md">
-                    <div>
-                        <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 border border-emerald-100">
-                            <i data-lucide="smile" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Odontologia & Implantes</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-                            Qualifica pacientes para Clareamento a laser, Lentes de Contato dental, Ortodontia/Invisalign, Próteses e Implantes dentários.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-200 pt-4">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Triagem do que o paciente deseja corrigir</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Agenda avaliação com o especialista</li>
-                    </ul>
-                </div>
-
-                <div class="glass-panel rounded-xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-sm hover:shadow-md transition-all">
-                    <div>
-                        <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-5 border border-blue-100">
-                            <i data-lucide="users" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Painel da Recepção</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
-                            Sua secretária visualiza todos os pacientes em tempo real. Se ela quiser assumir a conversa para dar uma atenção especial, a IA pausa na hora.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-200 pt-4">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600 flex-shrink-0"></i> Vários atendentes no mesmo número</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600 flex-shrink-0"></i> Histórico completo de conversas</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <section id="planos" class="reveal-item py-14 sm:py-20 border-t border-slate-200 bg-slate-50/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
@@ -372,81 +492,64 @@
                     Investimento Transparente
                 </span>
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
-                    Planos Feitos Para se Pagarem com 1 ou 2 Procedimentos
+                    Dois Planos. Cresça no Seu Ritmo.
                 </h2>
                 <p class="text-slate-600 text-xs sm:text-sm mt-2">
-                    Taxa única de implantação sob medida + suporte mensal contínuo.
+                    Sem taxa de implementação. Comece pelo essencial e libere as automações de escala quando a agenda encher.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
-                
-                <div class="glass-panel rounded-xl p-5 sm:p-7 md:p-8 flex flex-col justify-between border border-slate-200 shadow-sm">
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8 items-stretch max-w-4xl mx-auto">
+
+                <div class="glass-panel rounded-xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-sm">
                     <div>
-                        <div class="text-[11px] font-mono uppercase text-slate-500 mb-1.5 font-bold">Para Profissional Autônomo / 1 Sala</div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Consultório Solo</h3>
-                        <div class="mt-3 sm:mt-4 mb-5 sm:mb-6">
-                            <span class="text-2xl sm:text-3xl font-black text-slate-900 font-mono">R$ 2.800</span>
-                            <span class="text-xs text-slate-500 block mt-1">Taxa Única de Implementação</span>
-                            <div class="text-xs sm:text-sm text-amber-700 font-bold mt-2">+ R$ 790 /mês (servidor + IA + suporte)</div>
+                        <div class="text-[11px] font-mono uppercase text-slate-500 mb-1.5 font-bold">Foco em Conversão</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Start</h3>
+                        <div class="mt-3 sm:mt-4 mb-3">
+                            <span class="text-2xl sm:text-3xl font-black text-slate-900 font-mono">R$ 497</span>
+                            <span class="text-xs sm:text-sm text-slate-500">/mês</span>
+                            <span class="text-xs text-slate-500 block mt-1">Sem taxa de implementação</span>
                         </div>
-                        <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-200 pt-4 mb-6">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Secretária IA para 1 profissional / agenda</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Treinamento com tabela de procedimentos</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Agendamento no Google Agenda</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Mensagens automáticas anti-falta</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Servidor em nuvem dedicado incluso</li>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5 pb-5 border-b border-slate-200">
+                            Pra você ver o paciente sair de "Lead" pra "Agendado" com os próprios olhos.
+                        </p>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Recepção por IA no WhatsApp</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Agenda & Confirmação Automática</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> App Móvel para sua Equipe</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> CRM & Funil de Pacientes (Oportunidades)</li>
                         </ul>
                     </div>
                     <a href="#contato" class="w-full py-3.5 text-center font-bold text-xs sm:text-sm text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-md transition-all border border-slate-300">
-                        Solicitar Consultório Solo
+                        Começar com o Start
                     </a>
                 </div>
 
-                <div class="glass-panel-gold rounded-xl p-5 sm:p-7 md:p-8 flex flex-col justify-between relative shadow-xl bg-gradient-to-b from-amber-500/10 via-transparent to-transparent border-2 border-amber-400">
+                <div class="glass-panel-gold rounded-xl p-6 sm:p-8 flex flex-col justify-between relative shadow-xl bg-gradient-to-b from-amber-500/10 via-transparent to-transparent border-2 border-amber-400">
                     <div class="inline-block self-start sm:self-auto sm:absolute -top-3.5 sm:left-1/2 sm:-translate-x-1/2 gold-gradient-bg text-white text-[10px] sm:text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md mb-3 sm:mb-0">
                         Mais Escolhido por Clínicas
                     </div>
                     <div>
-                        <div class="text-[11px] font-mono uppercase text-amber-800 font-bold mb-1.5">Para Clínicas com 2 ou Mais Profissionais</div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Clínica Pro & Equipe</h3>
-                        <div class="mt-3 sm:mt-4 mb-5 sm:mb-6">
-                            <span class="text-2xl sm:text-3xl font-black text-slate-900 font-mono">R$ 4.500</span>
-                            <span class="text-xs text-slate-500 block mt-1">Taxa Única de Implementação</span>
-                            <div class="text-xs sm:text-sm text-amber-700 font-bold mt-2">+ R$ 1.290 /mês (servidor + IA + suporte VIP)</div>
+                        <div class="text-[11px] font-mono uppercase text-amber-800 font-bold mb-1.5">Foco em Escala e Pós-Venda</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Pro</h3>
+                        <div class="mt-3 sm:mt-4 mb-3">
+                            <span class="text-2xl sm:text-3xl font-black text-slate-900 font-mono">R$ 997</span>
+                            <span class="text-xs sm:text-sm text-slate-500">/mês</span>
+                            <span class="text-xs text-slate-500 block mt-1">Sem taxa de implementação</span>
                         </div>
-                        <ul class="space-y-2.5 text-xs text-slate-800 border-t border-amber-300/60 pt-4 mb-6">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Tudo do plano Consultório Solo</strong></li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Multi-Agendas (distribuição por profissional)</strong></li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Painel para a Recepção</strong></li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Transbordo humano com 1 clique</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Relatório semanal no WhatsApp dos sócios</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Garantia Blindada de 14 Dias</strong></li>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-5 pb-5 border-b border-amber-300/60">
+                            Pra clínica ganhar dinheiro sozinha e subir no ranking do Google.
+                        </p>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-800 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Tudo do plano Start</strong></li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Gestão de Reputação (avaliações automáticas no Google)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Pagamentos & Faturas (link de sinal)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Relatórios de Anúncios</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Automação de Reativação</strong> (pacientes sumidos há 6+ meses)</li>
                         </ul>
                     </div>
                     <a href="#contato" class="w-full py-3.5 sm:py-4 text-center font-bold text-xs sm:text-sm text-white gold-gradient-bg rounded-md shadow-lg hover:opacity-95 transition-opacity">
-                        Contratar Clínica Pro
-                    </a>
-                </div>
-
-                <div class="glass-panel rounded-xl p-5 sm:p-7 md:p-8 flex flex-col justify-between border border-slate-200 shadow-sm sm:col-span-2 lg:col-span-1">
-                    <div>
-                        <div class="text-[11px] font-mono uppercase text-slate-500 mb-1.5 font-bold">Redes, Franquias & Hospitais Dia</div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Redes & Franquias</h3>
-                        <div class="mt-3 sm:mt-4 mb-5 sm:mb-6">
-                            <span class="text-2xl sm:text-3xl font-black text-slate-900 font-mono">R$ 8.500+</span>
-                            <span class="text-xs text-slate-500 block mt-1">Taxa de Implementação</span>
-                            <div class="text-xs sm:text-sm text-amber-700 font-bold mt-2">+ R$ 2.490 /mês (infraestrutura dedicada)</div>
-                        </div>
-                        <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-200 pt-4 mb-6">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Múltiplas unidades e números de WhatsApp</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Integração com ERP/Software Clínico</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Disparo de confirmação de sinal via Pix</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> SLA de atendimento prioritário em até 1h</li>
-                        </ul>
-                    </div>
-                    <a href="#contato" class="w-full py-3.5 text-center font-bold text-xs sm:text-sm text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-md transition-all border border-slate-300">
-                        Falar com Especialista
+                        Quero o Pro
                     </a>
                 </div>
 
@@ -463,7 +566,7 @@
                 <div>
                     <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">Garantia Blindada de 14 Dias para sua Clínica</h3>
                     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Se nos primeiros 14 dias de uso você não notar que sua clínica está agendando mais procedimentos fora do horário comercial e reduzindo faltas, nós cancelamos e <strong class="text-slate-900 font-bold">devolvemos 100% do valor do setup</strong>. O risco é todo nosso.
+                        Se nos primeiros 14 dias de uso você não notar sua agenda mais cheia e seus pacientes mais organizados no CRM, você cancela <strong class="text-slate-900 font-bold">sem multa e sem burocracia</strong>. O risco é todo nosso.
                     </p>
                 </div>
             </div>
@@ -474,7 +577,7 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-8 sm:mb-12">
                 <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Dúvidas Frequentes de Clínicas</h2>
-                <p class="text-slate-600 text-xs sm:text-sm mt-2">Como a IA se comporta no atendimento de saúde e estética</p>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2">Como a plataforma se comporta no atendimento de saúde e estética</p>
             </div>
 
             <div class="space-y-3 sm:space-y-4">
@@ -500,21 +603,31 @@
 
                 <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
                     <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
-                        <span>Como a minha secretária atende quando o paciente quer falar com ela?</span>
+                        <span>Preciso saber usar CRM ou ter equipe técnica pra usar a plataforma?</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
                     </div>
                     <p class="text-slate-600 text-xs mt-3 hidden leading-relaxed">
-                        Entregamos o painel da recepção no computador ou celular da sua secretária. Se ela digitar qualquer mensagem na conversa ou clicar em "Assumir", a IA pausa imediatamente para aquele paciente.
+                        Não. O painel é visual e simples — se você sabe usar WhatsApp, sabe acompanhar o funil de pacientes. Nossa equipe configura as etapas, a agenda e as automações pra você, do zero.
                     </p>
                 </div>
 
                 <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
                     <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
-                        <span>Quanto tempo leva para a secretária virtual estar funcionando?</span>
+                        <span>Como a minha secretária atende quando o paciente quer falar com ela?</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
                     </div>
                     <p class="text-slate-600 text-xs mt-3 hidden leading-relaxed">
-                        O processo completo — mapeamento da sua tabela de procedimentos, treinamento do tom de voz, conexão com a agenda e testes — leva de <strong class="text-slate-900">3 a 5 dias úteis</strong>.
+                        Entregamos o painel de atendimento no computador ou no app do celular da sua secretária. Se ela digitar qualquer mensagem na conversa ou clicar em "Assumir", a IA pausa imediatamente para aquele paciente.
+                    </p>
+                </div>
+
+                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
+                    <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
+                        <span>Quanto tempo leva para a plataforma estar funcionando?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
+                    </div>
+                    <p class="text-slate-600 text-xs mt-3 hidden leading-relaxed">
+                        O processo completo — mapeamento da sua tabela de procedimentos, treinamento do tom de voz, conexão com a agenda e configuração do CRM — leva de <strong class="text-slate-900">3 a 5 dias úteis</strong>.
                     </p>
                 </div>
             </div>
@@ -524,13 +637,13 @@
     <section id="contato" class="reveal-item py-16 sm:py-24 border-t border-slate-200 bg-slate-100/50 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <div class="glass-panel-gold rounded-xl p-6 sm:p-10 md:p-12 shadow-2xl relative border border-amber-300">
-                
+
                 <div class="text-center mb-8 sm:mb-10">
                     <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
                         Demonstração Gratuita no seu WhatsApp
                     </span>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
-                        Veja Como Fica a Secretária de IA da Sua Clínica
+                        Veja a Plataforma Completa em Ação na Sua Clínica
                     </h2>
                     <p class="text-slate-600 text-xs sm:text-sm mt-2 max-w-xl mx-auto">
                         Preencha os dados abaixo. Nós criamos um protótipo de teste personalizado com os procedimentos da sua clínica para você testar no seu celular em menos de 10 minutos!
@@ -575,7 +688,7 @@
                         <i data-lucide="send" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                         <span>Receber Demonstração no Meu WhatsApp</span>
                     </button>
-                    
+
                     <p class="text-center text-[10px] sm:text-[11px] text-slate-500">
                         🔒 Sem spam. Seus dados são usados exclusivamente para o envio do protótipo de teste.
                     </p>
@@ -594,7 +707,7 @@
                 </div>
                 <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs text-slate-600 font-medium">
                     <a href="#como-funciona" class="hover:text-amber-600 transition">Como Funciona</a>
-                    <a href="#procedimentos" class="hover:text-amber-600 transition">Procedimentos</a>
+                    <a href="#recursos" class="hover:text-amber-600 transition">Recursos</a>
                     <a href="#planos" class="hover:text-amber-600 transition">Planos</a>
                     <a href="#contato" class="hover:text-amber-600 transition">Contato</a>
                 </div>
@@ -649,7 +762,7 @@
                     const p = card.querySelector('p');
                     const icon = card.querySelector('i');
                     const isHidden = p.classList.contains('hidden');
-                    
+
                     document.querySelectorAll('.faq-toggle p').forEach(item => item.classList.add('hidden'));
                     document.querySelectorAll('.faq-toggle i').forEach(item => item.style.transform = 'rotate(0deg)');
 
@@ -699,7 +812,7 @@
                     const team = document.getElementById('form-team').value;
 
                     const text = encodeURIComponent(
-                        `Olá! Gostaria de testar a demonstração da Secretária de IA para minha clínica.\n\n` +
+                        `Olá! Gostaria de testar a demonstração da plataforma para minha clínica.\n\n` +
                         `*Profissional:* ${name}\n` +
                         `*WhatsApp:* ${phone}\n` +
                         `*Clínica:* ${company}\n` +
