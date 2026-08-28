@@ -170,13 +170,17 @@
 
                     <!-- Mockup Image Container -->
                     <div class="relative z-10 w-full flex justify-center py-2">
-                        <img src="/assets/whatsapp-mockup.png"
-                             alt="Demonstração da Secretária IA Avanço AI no WhatsApp"
-                             width="426"
-                             height="885"
-                             class="w-auto h-auto max-h-[520px] sm:max-h-[580px] lg:max-h-[620px] drop-shadow-[0_20px_30px_rgba(15,23,42,0.15)] object-contain select-none transition-transform duration-500 hover:scale-[1.02]"
-                             loading="eager"
-                             decoding="async">
+                        <picture>
+                            <source srcset="/assets/whatsapp-mockup.webp" type="image/webp">
+                            <img src="/assets/whatsapp-mockup.png"
+                                 alt="Demonstração da Secretária IA Avanço AI no WhatsApp"
+                                 width="635"
+                                 height="1300"
+                                 class="w-auto h-auto max-h-[520px] sm:max-h-[580px] lg:max-h-[620px] drop-shadow-[0_20px_30px_rgba(15,23,42,0.15)] object-contain select-none transition-transform duration-500 hover:scale-[1.02]"
+                                 loading="eager"
+                                 fetchpriority="high"
+                                 decoding="async">
+                        </picture>
                     </div>
 
                     <!-- Bottom Conversion Metric -->
