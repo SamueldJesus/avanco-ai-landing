@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
@@ -21,7 +21,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
     <link rel="shortcut icon" href="/assets/favicon.ico">
-    <meta name="theme-color" content="#FAFAFC">
+    <meta name="theme-color" content="#08090a">
     <noscript>
         <style>.reveal-item{opacity:1 !important;transform:none !important}</style>
     </noscript>
@@ -30,7 +30,7 @@
 
     <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[250px] sm:h-[350px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none -z-10 animate-glow"></div>
 
-    <div class="bg-white/95 border-b border-slate-200 py-2 px-3 sm:px-4 text-xs text-slate-600 relative z-50">
+    <div class="bg-brand-panel/95 border-b border-slate-200 py-2 px-3 sm:px-4 text-xs text-slate-600 relative z-50">
         <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
             <div class="flex items-center gap-2 min-w-0">
                 <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] sm:text-[11px] font-semibold border border-emerald-200 whitespace-nowrap flex-shrink-0">
@@ -66,20 +66,20 @@
             </ul>
 
             <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
-                <a href="#contato" class="gold-gradient-bg px-3 sm:px-5 py-2 sm:py-2.5 text-black font-bold rounded-full text-xs sm:text-sm hover:opacity-95 hover:-translate-y-0.5 shadow-md shadow-amber-500/20 transition-all flex items-center gap-1.5 shrink-0"
+                <a href="#contato" class="gold-gradient-bg px-3 sm:px-5 py-2 sm:py-2.5 text-white font-bold rounded-md text-xs sm:text-sm hover:opacity-95 hover:-translate-y-0.5 shadow-md shadow-amber-500/20 transition-all flex items-center gap-1.5 shrink-0"
                    aria-label="Demonstração Grátis">
                     <i data-lucide="message-square" class="w-4 h-4 shrink-0"></i>
                     <span class="hidden sm:inline whitespace-nowrap">Demonstração Grátis</span>
                     <span class="sm:hidden whitespace-nowrap">Demo</span>
                 </a>
 
-                <button id="mobile-menu-btn" aria-label="Abrir Menu" class="lg:hidden p-2 rounded-xl glass-panel text-slate-700 hover:text-slate-900 shrink-0">
+                <button id="mobile-menu-btn" aria-label="Abrir Menu" class="lg:hidden p-2 rounded-md glass-panel text-slate-700 hover:text-slate-900 shrink-0">
                     <i data-lucide="menu" class="w-5 h-5"></i>
                 </button>
             </div>
         </nav>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-white/98 border-b border-slate-200 px-6 py-4 space-y-3 text-sm font-medium text-slate-700">
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-panel/98 border-b border-slate-200 px-6 py-4 space-y-3 text-sm font-medium text-slate-700">
             <a href="#como-funciona" class="block py-1 hover:text-amber-600 mobile-nav-link">Como Funciona</a>
             <a href="#procedimentos" class="block py-1 hover:text-amber-600 mobile-nav-link">Procedimentos Atendidos</a>
             <a href="#calculadora" class="block py-1 hover:text-amber-600 mobile-nav-link">Calculadora de Faturamento</a>
@@ -93,7 +93,7 @@
             <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
                 <div class="lg:col-span-7 min-w-0 space-y-5 sm:space-y-7 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50/90 border border-amber-300/80 text-amber-900 text-[11px] sm:text-xs font-semibold max-w-full shadow-xs">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 border border-amber-300/80 text-amber-900 text-[11px] sm:text-xs font-semibold max-w-full shadow-xs">
                         <i data-lucide="heart-pulse" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i>
                         <span class="truncate">IA para Clínicas de Estética, Harmonização & Odonto</span>
                     </div>
@@ -109,11 +109,11 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-1">
-                        <a href="#contato" class="gold-gradient-bg w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-black font-extrabold rounded-full text-sm sm:text-base hover:opacity-95 shadow-xl shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
+                        <a href="#contato" class="gold-gradient-bg w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-white font-extrabold rounded-md text-sm sm:text-base hover:opacity-95 shadow-xl shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
                             <i data-lucide="play" class="w-4 h-4 fill-current"></i>
                             <span>Testar no WhatsApp da Minha Clínica</span>
                         </a>
-                        <a href="#como-funciona" class="w-full sm:w-auto px-5 sm:px-6 py-3.5 sm:py-4 bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-semibold rounded-full text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs">
+                        <a href="#como-funciona" class="w-full sm:w-auto px-5 sm:px-6 py-3.5 sm:py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-slate-800 font-semibold rounded-md text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs">
                             <span>Ver Como Funciona</span>
                             <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-amber-600"></i>
                         </a>
@@ -146,7 +146,7 @@
                     </div>
 
                     <!-- Floating Badge Top Right: Agendado -->
-                    <div class="absolute top-12 -right-2 sm:-right-6 z-20 glass-panel-gold px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl border border-amber-400/50 shadow-xl flex items-center gap-2 animate-float-delayed">
+                    <div class="absolute top-12 -right-2 sm:-right-6 z-20 glass-panel-gold px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl border border-amber-400/50 shadow-xl flex items-center gap-2 animate-float-delayed">
                         <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-600 flex items-center justify-center font-bold text-xs">
                             <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i>
                         </div>
@@ -157,7 +157,7 @@
                     </div>
 
                     <!-- Floating Badge Bottom Left: Sinal Pix / Vaga Blindada -->
-                    <div class="absolute bottom-10 -left-2 sm:-left-6 z-20 glass-panel px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl border border-amber-300 shadow-xl flex items-center gap-2 animate-float">
+                    <div class="absolute bottom-10 -left-2 sm:-left-6 z-20 glass-panel px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl border border-amber-300 shadow-xl flex items-center gap-2 animate-float">
                         <div class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-600 flex items-center justify-center font-bold text-xs">
                             <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
                         </div>
@@ -204,8 +204,8 @@
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
                 
-                <div class="glass-panel rounded-3xl p-6 sm:p-8 border-red-200 bg-white shadow-sm">
-                    <div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center mb-5 border border-red-100">
+                <div class="glass-panel rounded-xl p-6 sm:p-8 border-red-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-5 border border-red-100">
                         <i data-lucide="moon" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Mensagens Fora do Horário</h3>
@@ -214,8 +214,8 @@
                     </p>
                 </div>
 
-                <div class="glass-panel rounded-3xl p-6 sm:p-8 border-amber-200 bg-white shadow-sm">
-                    <div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
+                <div class="glass-panel rounded-xl p-6 sm:p-8 border-amber-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
                         <i data-lucide="user-x" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Faltas de Última Hora (No-Show)</h3>
@@ -224,8 +224,8 @@
                     </p>
                 </div>
 
-                <div class="glass-panel rounded-3xl p-6 sm:p-8 border-blue-200 bg-white shadow-sm sm:col-span-2 lg:col-span-1">
-                    <div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 border border-blue-100">
+                <div class="glass-panel rounded-xl p-6 sm:p-8 border-blue-200 shadow-sm sm:col-span-2 lg:col-span-1">
+                    <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-5 border border-blue-100">
                         <i data-lucide="phone-call" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Recepção Sobrecarregada</h3>
@@ -240,7 +240,7 @@
 
     <section id="calculadora" class="reveal-item py-14 sm:py-20 border-t border-slate-200 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="glass-panel-gold rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl bg-white border border-amber-300">
+            <div class="glass-panel-gold rounded-xl p-6 sm:p-10 md:p-12 shadow-xl border border-amber-300">
                 
                 <div class="text-center mb-8 sm:mb-10">
                     <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
@@ -274,15 +274,15 @@
                         </div>
                     </div>
 
-                    <div class="bg-amber-50/80 border border-amber-300 rounded-2xl p-5 sm:p-6 text-center space-y-3.5 shadow-md">
-                        <span class="text-[10px] sm:text-xs uppercase font-mono text-slate-500 tracking-wider">Faturamento Extra Estimado / Mês</span>
+                    <div class="bg-amber-100 border border-amber-300 rounded-xl p-5 sm:p-6 text-center space-y-3.5 shadow-md">
+                        <span class="text-[10px] sm:text-xs uppercase font-mono text-slate-600 tracking-wider">Faturamento Extra Estimado / Mês</span>
                         <div id="result-revenue" class="text-3xl sm:text-4xl md:text-5xl font-black text-amber-700 font-mono">
                             +R$ 7.800 /mês
                         </div>
                         <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
                             Apenas recuperando <strong id="result-patients" class="text-slate-900">12 pacientes adicionais</strong> que você perderia por demora ou faltas.
                         </p>
-                        <a href="#contato" class="gold-gradient-bg block w-full py-3 sm:py-3.5 text-black font-bold rounded-xl text-xs sm:text-sm hover:opacity-95 transition-opacity shadow-md">
+                        <a href="#contato" class="gold-gradient-bg block w-full py-3 sm:py-3.5 text-white font-bold rounded-md text-xs sm:text-sm hover:opacity-95 transition-opacity shadow-md">
                             Quero Encher a Agenda da Minha Clínica
                         </a>
                     </div>
@@ -308,9 +308,9 @@
 
             <div class="grid md:grid-cols-3 gap-5 sm:gap-8">
                 
-                <div class="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div class="glass-panel rounded-xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-sm hover:shadow-md transition-all">
                     <div>
-                        <div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
+                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
                             <i data-lucide="sparkles" class="w-5 h-5"></i>
                         </div>
                         <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Estética & Harmonização Facial</h3>
@@ -318,15 +318,15 @@
                             Explica sobre Botox, Preenchimento labial, Bioestimuladores de Colágeno, Fios de PDO e Limpeza de Pele com linguagem refinada e acolhedora.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                    <ul class="space-y-2 text-xs text-slate-700 border-t border-white/10 pt-4">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Informa faixas de valores e parcelamento</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Envia cuidados pré e pós-procedimento</li>
                     </ul>
                 </div>
 
-                <div class="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between bg-white border-2 border-amber-400 shadow-md">
+                <div class="glass-panel rounded-xl p-6 sm:p-8 flex flex-col justify-between border-2 border-amber-400 shadow-md">
                     <div>
-                        <div class="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 border border-emerald-100">
+                        <div class="w-11 h-11 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 border border-emerald-100">
                             <i data-lucide="smile" class="w-5 h-5"></i>
                         </div>
                         <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Odontologia & Implantes</h3>
@@ -334,23 +334,23 @@
                             Qualifica pacientes para Clareamento a laser, Lentes de Contato dental, Ortodontia/Invisalign, Próteses e Implantes dentários.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                    <ul class="space-y-2 text-xs text-slate-700 border-t border-white/10 pt-4">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Triagem do que o paciente deseja corrigir</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Agenda avaliação com o especialista</li>
                     </ul>
                 </div>
 
-                <div class="glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div class="glass-panel rounded-xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-sm hover:shadow-md transition-all">
                     <div>
-                        <div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 border border-blue-100">
+                        <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-5 border border-blue-100">
                             <i data-lucide="users" class="w-5 h-5"></i>
                         </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Painel da Recepção (Chatwoot)</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Painel da Recepção</h3>
                         <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
                             Sua secretária visualiza todos os pacientes em tempo real. Se ela quiser assumir a conversa para dar uma atenção especial, a IA pausa na hora.
                         </p>
                     </div>
-                    <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                    <ul class="space-y-2 text-xs text-slate-700 border-t border-white/10 pt-4">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600 flex-shrink-0"></i> Vários atendentes no mesmo número</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600 flex-shrink-0"></i> Histórico completo de conversas</li>
                     </ul>
@@ -376,7 +376,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
                 
-                <div class="glass-panel rounded-3xl p-5 sm:p-7 md:p-8 flex flex-col justify-between bg-white border border-slate-200 shadow-sm">
+                <div class="glass-panel rounded-xl p-5 sm:p-7 md:p-8 flex flex-col justify-between border border-slate-200 shadow-sm">
                     <div>
                         <div class="text-[11px] font-mono uppercase text-slate-500 mb-1.5 font-bold">Para Profissional Autônomo / 1 Sala</div>
                         <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Consultório Solo</h3>
@@ -385,7 +385,7 @@
                             <span class="text-xs text-slate-500 block mt-1">Taxa Única de Implementação</span>
                             <div class="text-xs sm:text-sm text-amber-700 font-bold mt-2">+ R$ 790 /mês (servidor + IA + suporte)</div>
                         </div>
-                        <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-100 pt-4 mb-6">
+                        <ul class="space-y-2.5 text-xs text-slate-700 border-t border-white/10 pt-4 mb-6">
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Secretária IA para 1 profissional / agenda</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Treinamento com tabela de procedimentos</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Agendamento no Google Agenda</li>
@@ -393,13 +393,13 @@
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Servidor em nuvem dedicado incluso</li>
                         </ul>
                     </div>
-                    <a href="#contato" class="w-full py-3.5 text-center font-bold text-xs sm:text-sm text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-xl transition-all border border-slate-300">
+                    <a href="#contato" class="w-full py-3.5 text-center font-bold text-xs sm:text-sm text-slate-800 bg-white/5 hover:bg-white/10 rounded-md transition-all border border-white/10">
                         Solicitar Consultório Solo
                     </a>
                 </div>
 
-                <div class="glass-panel-gold rounded-3xl p-5 sm:p-7 md:p-8 flex flex-col justify-between relative shadow-xl bg-gradient-to-b from-amber-50/40 via-white to-white border-2 border-amber-400">
-                    <div class="inline-block self-start sm:self-auto sm:absolute -top-3.5 sm:left-1/2 sm:-translate-x-1/2 gold-gradient-bg text-black text-[10px] sm:text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md mb-3 sm:mb-0">
+                <div class="glass-panel-gold rounded-xl p-5 sm:p-7 md:p-8 flex flex-col justify-between relative shadow-xl bg-gradient-to-b from-amber-500/10 via-transparent to-transparent border-2 border-amber-400">
+                    <div class="inline-block self-start sm:self-auto sm:absolute -top-3.5 sm:left-1/2 sm:-translate-x-1/2 gold-gradient-bg text-white text-[10px] sm:text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md mb-3 sm:mb-0">
                         Mais Escolhido por Clínicas
                     </div>
                     <div>
@@ -410,21 +410,21 @@
                             <span class="text-xs text-slate-500 block mt-1">Taxa Única de Implementação</span>
                             <div class="text-xs sm:text-sm text-amber-700 font-bold mt-2">+ R$ 1.290 /mês (servidor + IA + suporte VIP)</div>
                         </div>
-                        <ul class="space-y-2.5 text-xs text-slate-800 border-t border-amber-200/60 pt-4 mb-6">
+                        <ul class="space-y-2.5 text-xs text-slate-800 border-t border-amber-300/60 pt-4 mb-6">
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Tudo do plano Consultório Solo</strong></li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Multi-Agendas (distribuição por profissional)</strong></li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Painel para a Recepção (Chatwoot)</strong></li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Painel para a Recepção</strong></li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Transbordo humano com 1 clique</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Relatório semanal no WhatsApp dos sócios</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Garantia Blindada de 14 Dias</strong></li>
                         </ul>
                     </div>
-                    <a href="#contato" class="w-full py-3.5 sm:py-4 text-center font-bold text-xs sm:text-sm text-black gold-gradient-bg rounded-xl shadow-lg hover:opacity-95 transition-opacity">
+                    <a href="#contato" class="w-full py-3.5 sm:py-4 text-center font-bold text-xs sm:text-sm text-white gold-gradient-bg rounded-md shadow-lg hover:opacity-95 transition-opacity">
                         Contratar Clínica Pro
                     </a>
                 </div>
 
-                <div class="glass-panel rounded-3xl p-5 sm:p-7 md:p-8 flex flex-col justify-between bg-white border border-slate-200 shadow-sm sm:col-span-2 lg:col-span-1">
+                <div class="glass-panel rounded-xl p-5 sm:p-7 md:p-8 flex flex-col justify-between border border-slate-200 shadow-sm sm:col-span-2 lg:col-span-1">
                     <div>
                         <div class="text-[11px] font-mono uppercase text-slate-500 mb-1.5 font-bold">Redes, Franquias & Hospitais Dia</div>
                         <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Redes & Franquias</h3>
@@ -433,14 +433,14 @@
                             <span class="text-xs text-slate-500 block mt-1">Taxa de Implementação</span>
                             <div class="text-xs sm:text-sm text-amber-700 font-bold mt-2">+ R$ 2.490 /mês (infraestrutura dedicada)</div>
                         </div>
-                        <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-100 pt-4 mb-6">
+                        <ul class="space-y-2.5 text-xs text-slate-700 border-t border-white/10 pt-4 mb-6">
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Múltiplas unidades e números de WhatsApp</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Integração com ERP/Software Clínico</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Disparo de confirmação de sinal via Pix</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> SLA de atendimento prioritário em até 1h</li>
                         </ul>
                     </div>
-                    <a href="#contato" class="w-full py-3.5 text-center font-bold text-xs sm:text-sm text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-xl transition-all border border-slate-300">
+                    <a href="#contato" class="w-full py-3.5 text-center font-bold text-xs sm:text-sm text-slate-800 bg-white/5 hover:bg-white/10 rounded-md transition-all border border-white/10">
                         Falar com Especialista
                     </a>
                 </div>
@@ -451,7 +451,7 @@
 
     <section class="py-10 sm:py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="glass-panel-gold rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center gap-5 sm:gap-6 text-center sm:text-left bg-white border border-emerald-300 shadow-md">
+            <div class="glass-panel-gold rounded-xl p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center gap-5 sm:gap-6 text-center sm:text-left border border-emerald-300 shadow-md">
                 <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 border border-emerald-300">
                     <i data-lucide="shield-check" class="w-8 h-8 sm:w-10 sm:h-10"></i>
                 </div>
@@ -473,7 +473,7 @@
             </div>
 
             <div class="space-y-3 sm:space-y-4">
-                <div class="glass-panel rounded-2xl p-4 sm:p-5 cursor-pointer faq-toggle bg-white border border-slate-200 shadow-xs hover:border-amber-400">
+                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
                     <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
                         <span>A IA corre risco de dar diagnósticos ou passar informações erradas?</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
@@ -483,7 +483,7 @@
                     </p>
                 </div>
 
-                <div class="glass-panel rounded-2xl p-4 sm:p-5 cursor-pointer faq-toggle bg-white border border-slate-200 shadow-xs hover:border-amber-400">
+                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
                     <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
                         <span>Eu perco o meu número de WhatsApp da clínica?</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
@@ -493,17 +493,17 @@
                     </p>
                 </div>
 
-                <div class="glass-panel rounded-2xl p-4 sm:p-5 cursor-pointer faq-toggle bg-white border border-slate-200 shadow-xs hover:border-amber-400">
+                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
                     <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
                         <span>Como a minha secretária atende quando o paciente quer falar com ela?</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
                     </div>
                     <p class="text-slate-600 text-xs mt-3 hidden leading-relaxed">
-                        Entregamos o painel da recepção (Chatwoot) no computador ou celular da sua secretária. Se ela digitar qualquer mensagem na conversa ou clicar em "Assumir", a IA pausa imediatamente para aquele paciente.
+                        Entregamos o painel da recepção no computador ou celular da sua secretária. Se ela digitar qualquer mensagem na conversa ou clicar em "Assumir", a IA pausa imediatamente para aquele paciente.
                     </p>
                 </div>
 
-                <div class="glass-panel rounded-2xl p-4 sm:p-5 cursor-pointer faq-toggle bg-white border border-slate-200 shadow-xs hover:border-amber-400">
+                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
                     <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
                         <span>Quanto tempo leva para a secretária virtual estar funcionando?</span>
                         <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
@@ -518,7 +518,7 @@
 
     <section id="contato" class="reveal-item py-16 sm:py-24 border-t border-slate-200 bg-slate-100/50 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="glass-panel-gold rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl relative bg-white border border-amber-300">
+            <div class="glass-panel-gold rounded-xl p-6 sm:p-10 md:p-12 shadow-2xl relative border border-amber-300">
                 
                 <div class="text-center mb-8 sm:mb-10">
                     <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
@@ -536,22 +536,22 @@
                     <div class="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
                         <div>
                             <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">Seu Nome / Título</label>
-                            <input type="text" id="form-name" required placeholder="Ex: Dra. Juliana / Dr. Marcelo" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:bg-white text-xs sm:text-sm transition">
+                            <input type="text" id="form-name" required placeholder="Ex: Dra. Juliana / Dr. Marcelo" class="w-full px-3.5 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-md text-slate-900 placeholder-slate-600 focus:outline-none focus:border-amber-500 focus:bg-white/10 text-xs sm:text-sm transition">
                         </div>
                         <div>
                             <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">WhatsApp (com DDD)</label>
-                            <input type="tel" id="form-phone" required placeholder="(11) 99999-9999" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:bg-white text-xs sm:text-sm transition">
+                            <input type="tel" id="form-phone" required placeholder="(11) 99999-9999" class="w-full px-3.5 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-md text-slate-900 placeholder-slate-600 focus:outline-none focus:border-amber-500 focus:bg-white/10 text-xs sm:text-sm transition">
                         </div>
                     </div>
 
                     <div class="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
                         <div>
                             <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">Nome da Sua Clínica / Consultório</label>
-                            <input type="text" id="form-company" required placeholder="Ex: Clínica Sorrir / Espaço Belladerme" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:bg-white text-xs sm:text-sm transition">
+                            <input type="text" id="form-company" required placeholder="Ex: Clínica Sorrir / Espaço Belladerme" class="w-full px-3.5 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-md text-slate-900 placeholder-slate-600 focus:outline-none focus:border-amber-500 focus:bg-white/10 text-xs sm:text-sm transition">
                         </div>
                         <div>
                             <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">Especialidade Principal</label>
-                            <select id="form-service" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white text-xs sm:text-sm transition">
+                            <select id="form-service" class="w-full px-3.5 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-md text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-white/10 text-xs sm:text-sm transition">
                                 <option value="Estética Avançada / Harmonização">Estética Avançada / Harmonização</option>
                                 <option value="Odontologia / Implantes / Lentes">Odontologia / Implantes / Lentes</option>
                                 <option value="Dermatologia / Cirurgia Plástica">Dermatologia / Cirurgia Plástica</option>
@@ -563,10 +563,10 @@
 
                     <div>
                         <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">Quantos profissionais atendem na sua clínica?</label>
-                        <input type="text" id="form-team" placeholder="Ex: 1 profissional / 3 dentistas e 1 recepcionista" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:bg-white text-xs sm:text-sm transition">
+                        <input type="text" id="form-team" placeholder="Ex: 1 profissional / 3 dentistas e 1 recepcionista" class="w-full px-3.5 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-md text-slate-900 placeholder-slate-600 focus:outline-none focus:border-amber-500 focus:bg-white/10 text-xs sm:text-sm transition">
                     </div>
 
-                    <button type="submit" class="w-full py-3.5 sm:py-4 gold-gradient-bg text-black font-extrabold rounded-xl text-sm sm:text-base hover:opacity-95 transition-opacity shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+                    <button type="submit" class="w-full py-3.5 sm:py-4 gold-gradient-bg text-white font-extrabold rounded-md text-sm sm:text-base hover:opacity-95 transition-opacity shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
                         <i data-lucide="send" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                         <span>Receber Demonstração no Meu WhatsApp</span>
                     </button>
@@ -580,7 +580,7 @@
         </div>
     </section>
 
-    <footer class="border-t border-slate-200 py-10 bg-white text-slate-600">
+    <footer class="border-t border-slate-200 py-10 text-slate-600">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
                 <div class="flex items-center gap-2 sm:gap-2.5">
