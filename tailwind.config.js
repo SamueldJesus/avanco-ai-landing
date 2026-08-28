@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-// Paleta portada para o Design System da Linear (linear.app): canvas quase-preto,
-// Inter Variable com "cv01"/"ss03", peso 510 como padrão de ênfase e indigo-violeta
+// Paleta portada para o Design System da Linear (linear.app): tipografia Inter
+// Variable com "cv01"/"ss03", peso 510 como padrão de ênfase e indigo-violeta
 // como único acento cromático. As classes do HTML (amber-*, slate-*, rounded-*)
-// não mudaram de nome — só a escala de cores/pesos por trás delas foi redesenhada,
-// então rodar `npm run build:css` já é suficiente para refletir o novo visual.
+// não mudaram de nome — a mudança de tema acontece aqui, apontando cada cor
+// para uma CSS custom property (definida em src/input.css com um par claro/
+// escuro sob @media (prefers-color-scheme: dark)). Isso faz claro/escuro trocar
+// sozinho, sem classe "dark", sem toggle e sem JS — puro CSS nativo do navegador.
+// `rgb(var(--x) / <alpha-value>)` preserva os modificadores de opacidade do
+// Tailwind (ex: bg-amber-500/20) mesmo com o valor vindo de uma variável.
 module.exports = {
-  darkMode: 'class',
+  darkMode: 'media',
   content: ['./index.html'],
   theme: {
     screens: {
@@ -44,70 +48,70 @@ module.exports = {
       },
       colors: {
         // Slot "amber" (antigo acento dourado) agora carrega o indigo-violeta
-        // da Linear. 50-200 viram tintas translúcidas para chips sobre fundo
-        // escuro; 300-700 cobrem bordas/ícones/links em violeta legível;
-        // 900 é o texto claro usado dentro dos próprios chips translúcidos.
+        // da Linear. 50-200 ficam como tintas translúcidas fixas — alpha sobre
+        // qualquer fundo já se adapta sozinho, não precisa de par claro/escuro.
+        // 300-900 vêm de variáveis (bordas/ícones/links/texto de chip), com o
+        // par claro/escuro inteiro em src/input.css.
         amber: {
           50: 'rgba(94, 106, 210, 0.06)',
           100: 'rgba(94, 106, 210, 0.12)',
           200: 'rgba(94, 106, 210, 0.24)',
-          300: '#7170ff',
-          400: '#828fff',
-          500: '#5e6ad2',
-          600: '#7170ff',
-          700: '#9698ff',
-          800: '#8385e8',
-          900: '#c7c9ff',
+          300: 'rgb(var(--c-amber-300) / <alpha-value>)',
+          400: 'rgb(var(--c-amber-400) / <alpha-value>)',
+          500: 'rgb(var(--c-amber-500) / <alpha-value>)',
+          600: 'rgb(var(--c-amber-600) / <alpha-value>)',
+          700: 'rgb(var(--c-amber-700) / <alpha-value>)',
+          800: 'rgb(var(--c-amber-800) / <alpha-value>)',
+          900: 'rgb(var(--c-amber-900) / <alpha-value>)',
         },
-        // Escala slate INVERTIDA: mesma ordinalidade que o tema claro original
-        // (900 = mais forte, 50 = mais fraco), mas os valores agora seguem a
-        // hierarquia de luminância da Linear no escuro. Isso faz o tema claro
-        // virar escuro automaticamente em ~150 usos de slate-* no HTML, sem
-        // precisar trocar classe por classe.
+        // Escala slate: mesma ordinalidade do tema claro original (900 = mais
+        // forte, 50 = mais fraco), mas cada estação vem de uma variável com
+        // par claro/escuro — o navegador troca sozinho via prefers-color-scheme,
+        // sem precisar trocar nenhuma classe no HTML.
         slate: {
-          50: '#08090a', // canvas mais profundo (era o branco mais claro)
-          100: '#0d0e10',
-          200: '#141516', // linha/borda quase invisível
-          300: '#1c1d1f',
-          400: '#28282c', // superfície elevada / hover
-          500: '#62666d', // texto quaternário
-          600: '#8a8f98', // texto terciário
-          700: '#c3c7cf', // texto secundário
-          800: '#e2e4e7',
-          900: '#f7f8f8', // texto primário (era o preto mais forte)
+          50: 'rgb(var(--c-slate-50) / <alpha-value>)',
+          100: 'rgb(var(--c-slate-100) / <alpha-value>)',
+          200: 'rgb(var(--c-slate-200) / <alpha-value>)',
+          300: 'rgb(var(--c-slate-300) / <alpha-value>)',
+          400: 'rgb(var(--c-slate-400) / <alpha-value>)',
+          500: 'rgb(var(--c-slate-500) / <alpha-value>)',
+          600: 'rgb(var(--c-slate-600) / <alpha-value>)',
+          700: 'rgb(var(--c-slate-700) / <alpha-value>)',
+          800: 'rgb(var(--c-slate-800) / <alpha-value>)',
+          900: 'rgb(var(--c-slate-900) / <alpha-value>)',
         },
         red: {
           50: 'rgba(248, 81, 73, 0.06)',
           100: 'rgba(248, 81, 73, 0.12)',
           200: 'rgba(248, 81, 73, 0.24)',
-          600: '#ff6a63',
-          700: '#ff8983',
+          600: 'rgb(var(--c-red-600) / <alpha-value>)',
+          700: 'rgb(var(--c-red-700) / <alpha-value>)',
         },
         blue: {
           50: 'rgba(94, 158, 255, 0.06)',
           100: 'rgba(94, 158, 255, 0.12)',
           200: 'rgba(94, 158, 255, 0.24)',
-          600: '#6ca6ff',
+          600: 'rgb(var(--c-blue-600) / <alpha-value>)',
         },
         emerald: {
           50: 'rgba(16, 185, 129, 0.06)',
           100: 'rgba(16, 185, 129, 0.12)',
           200: 'rgba(16, 185, 129, 0.24)',
           300: 'rgba(16, 185, 129, 0.4)',
-          500: '#10b981',
-          600: '#27a644',
-          700: '#34d399',
+          500: 'rgb(var(--c-emerald-500) / <alpha-value>)',
+          600: 'rgb(var(--c-emerald-600) / <alpha-value>)',
+          700: 'rgb(var(--c-emerald-700) / <alpha-value>)',
         },
         brand: {
-          gold: '#5e6ad2', // alias legado, agora aponta pro indigo
-          goldLight: '#828fff',
-          goldDark: '#4e58b8',
-          dark: '#08090a', // Marketing Black
-          card: '#0f1011', // Panel Dark
-          panel: '#0f1011',
-          surface: '#191a1b', // Level 3 Surface
-          cardBorder: 'rgba(255, 255, 255, 0.08)',
-          cardBorderHover: 'rgba(113, 112, 255, 0.35)',
+          gold: 'rgb(var(--c-amber-500) / <alpha-value>)', // alias legado, agora aponta pro indigo
+          goldLight: 'rgb(var(--c-brand-hover) / <alpha-value>)',
+          goldDark: 'rgb(var(--c-amber-700) / <alpha-value>)',
+          dark: 'rgb(var(--c-bg) / <alpha-value>)',
+          card: 'rgb(var(--c-panel) / <alpha-value>)',
+          panel: 'rgb(var(--c-panel) / <alpha-value>)',
+          surface: 'rgb(var(--c-surface) / <alpha-value>)',
+          cardBorder: 'rgb(var(--c-border) / 0.08)',
+          cardBorderHover: 'rgb(var(--c-amber-300) / 0.35)',
         },
       },
       animation: {
