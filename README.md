@@ -1,6 +1,6 @@
 # Avanço AI — Landing Page
 
-Landing page oficial da **Avanço AI**, secretária virtual com IA para clínicas de estética, harmonização facial e odontologia. O site apresenta a proposta de valor, um simulador de faturamento, os planos de contratação e um formulário que gera um lead direto no WhatsApp da equipe comercial.
+Landing page oficial da **Avanço AI**, automação de processos e implementação de IA sob medida para empresas. O site apresenta a proposta de valor, um simulador de horas/economia, o modelo de investimento (sob orçamento) e um formulário que gera um lead direto no WhatsApp da equipe comercial.
 
 **[avancoai.com.br](https://avancoai.com.br)**
 
@@ -33,7 +33,7 @@ A paleta antiga (dourado/âmbar em tema claro) foi inteiramente substituída, ma
 ├── src/input.css              # Fonte do CSS (Tailwind + estilos próprios)
 ├── assets/
 │   ├── style.css              # CSS compilado e versionado (é o que o site consome)
-│   ├── whatsapp-mockup.png    # Mockup usado no hero
+│   ├── whatsapp-mockup.png    # Não referenciado mais — hero usa mockup em HTML/CSS puro
 │   └── favicon*.{svg,png,ico} # Ícones
 └── package.json
 ```
