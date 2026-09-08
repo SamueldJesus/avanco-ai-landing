@@ -1,830 +1,606 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Avanço AI | Automação de Processos e Implementação de IA para Empresas</title>
-    <!-- ATENCAO: o Tailwind aqui e COMPILADO, nao mais o CDN.
-         Se voce adicionar/alterar classes do Tailwind neste HTML, rode
-         `npm run build:css` (ou deixe `npm run watch:css` rodando) — senao
-         a classe nova nao existe no assets/style.css e simplesmente nao
-         aplica estilo nenhum. O CSS gerado e versionado de proposito: o
-         deploy na Vercel continua 100% estatico, sem passo de build. -->
-    <link rel="stylesheet" href="/assets/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-    <link rel="shortcut icon" href="/assets/favicon.ico">
-    <meta name="theme-color" content="#f7f8f8" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#08090a" media="(prefers-color-scheme: dark)">
-    <noscript>
-        <style>.reveal-item{opacity:1 !important;transform:none !important}</style>
-    </noscript>
-</head>
-<body class="relative min-h-screen bg-grid-pattern selection:bg-amber-500/20 selection:text-amber-900 text-slate-900">
-
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[250px] sm:h-[350px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none -z-10 animate-glow"></div>
-
-    <div class="bg-brand-panel/95 border-b border-slate-200 py-2 px-3 sm:px-4 text-xs text-slate-600 relative z-50">
-        <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2 min-w-0">
-                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] sm:text-[11px] font-semibold border border-emerald-200 whitespace-nowrap flex-shrink-0">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-                    Sob Demanda
-                </span>
-                <span class="text-[11px] sm:text-xs text-slate-700 font-medium truncate">
-                    ⚙️ Empresas que automatizam processos manuais recuperam em média 20h de trabalho por mês.
-                </span>
-            </div>
-            <div class="hidden md:flex items-center gap-2 text-amber-700 font-semibold font-mono text-[11px] flex-shrink-0">
-                <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-600"></i> Diagnóstico Gratuito
-            </div>
-        </div>
-    </div>
-
-    <header class="sticky top-0 w-full glass-panel border-b border-slate-200/90 z-50 transition-all duration-300">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
-            <a href="#" class="text-base sm:text-xl lg:text-2xl font-extrabold flex items-center gap-2 sm:gap-2.5 group shrink-0">
-                <img src="/assets/favicon.svg" alt="Avanço AI Logo" class="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-xl shadow-md shadow-amber-500/20 shrink-0 group-hover:scale-105 transition-transform">
-                <div class="flex items-center tracking-tight">
-                    <span class="text-slate-900 font-black">Avanço</span>
-                    <span class="text-amber-500 font-black ml-1">AI</span>
-                </div>
-            </a>
-
-            <ul class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-600">
-                <li><a href="#como-funciona" class="hover:text-amber-600 transition-colors">Como Funciona</a></li>
-                <li><a href="#recursos" class="hover:text-amber-600 transition-colors">Serviços</a></li>
-                <li><a href="#calculadora" class="hover:text-amber-600 transition-colors">Calculadora</a></li>
-                <li><a href="#planos" class="hover:text-amber-600 transition-colors">Investimento</a></li>
-                <li><a href="#faq" class="hover:text-amber-600 transition-colors">Dúvidas</a></li>
-            </ul>
-
-            <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
-                <a href="#contato" class="gold-gradient-bg px-3 sm:px-5 py-2 sm:py-2.5 text-white font-bold rounded-md text-xs sm:text-sm hover:opacity-95 hover:-translate-y-0.5 shadow-md shadow-amber-500/20 transition-all flex items-center gap-1.5 shrink-0"
-                   aria-label="Diagnóstico Gratuito">
-                    <i data-lucide="message-square" class="w-4 h-4 shrink-0"></i>
-                    <span class="hidden sm:inline whitespace-nowrap">Diagnóstico Gratuito</span>
-                    <span class="sm:hidden whitespace-nowrap">Diagnóstico</span>
-                </a>
-
-                <button id="mobile-menu-btn" aria-label="Abrir Menu" class="lg:hidden p-2 rounded-md glass-panel text-slate-700 hover:text-slate-900 shrink-0">
-                    <i data-lucide="menu" class="w-5 h-5"></i>
-                </button>
-            </div>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Avanço AI | IA e automação comercial para vendas B2B</title>
+    <meta
+      name="description"
+      content="Agentes de IA e automação comercial para consultorias, recrutamento executivo, agências e SaaS B2B. Qualificação de leads, follow-up e CRM sob medida. Diagnóstico gratuito."
+    />
+    <link rel="canonical" href="https://www.avancoai.com.br/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta
+      property="og:title"
+      content="Avanço AI | Mais foco em fechar. Menos operação manual."
+    />
+    <meta
+      property="og:description"
+      content="Qualificação, follow-up e CRM conectados à sua operação comercial B2B. IA e automações sob medida."
+    />
+    <meta property="og:url" content="https://www.avancoai.com.br/" />
+    <meta name="theme-color" content="#10121c" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="/assets/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#principal">Ir para o conteúdo</a>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#" aria-label="Avanço AI início"
+          ><img src="/assets/favicon.svg" alt="" width="34" height="34" />Avanço
+          <span>AI</span></a
+        ><button
+          class="menu-button"
+          aria-expanded="false"
+          aria-controls="navigation"
+        >
+          Menu
+        </button>
+        <nav id="navigation" aria-label="Navegação principal">
+          <a href="#solucoes">Soluções</a><a href="#para-quem">Para quem</a
+          ><a href="#como-funciona">Como funciona</a><a href="#faq">Dúvidas</a
+          ><a class="button small" href="#contato">Agendar diagnóstico ↗</a>
         </nav>
-
-        <div id="mobile-menu" class="hidden lg:hidden bg-brand-panel/98 border-b border-slate-200 px-6 py-4 space-y-3 text-sm font-medium text-slate-700">
-            <a href="#como-funciona" class="block py-1 hover:text-amber-600 mobile-nav-link">Como Funciona</a>
-            <a href="#recursos" class="block py-1 hover:text-amber-600 mobile-nav-link">Nossos Serviços</a>
-            <a href="#calculadora" class="block py-1 hover:text-amber-600 mobile-nav-link">Calculadora de Economia</a>
-            <a href="#planos" class="block py-1 hover:text-amber-600 mobile-nav-link">Como Funciona o Investimento</a>
-            <a href="#faq" class="block py-1 hover:text-amber-600 mobile-nav-link">Dúvidas Frequentes</a>
-        </div>
+      </div>
     </header>
-
-    <section class="pt-10 sm:pt-16 pb-16 sm:pb-20 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-                <div class="lg:col-span-7 min-w-0 space-y-5 sm:space-y-7 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 border border-amber-300/80 text-amber-900 text-[11px] sm:text-xs font-semibold max-w-full shadow-xs">
-                        <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i>
-                        <span class="truncate">Automação de Processos & Implementação de IA para Empresas</span>
-                    </div>
-
-                    <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-[1.12] tracking-tight text-slate-900 break-words">
-                        Sua Empresa Rodando Mais Rápido, <br class="hidden sm:inline">
-                        <span class="glow-text">Com Menos Trabalho Manual.</span>
-                        <span class="block text-xl xs:text-2xl sm:text-3xl md:text-3xl text-slate-600 font-bold mt-2">Projeto sob medida, não pacote pronto.</span>
-                    </h1>
-
-                    <p class="text-sm sm:text-base md:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                        Mapeamos os processos que mais consomem tempo do seu time e implementamos <strong class="text-slate-900 font-bold">automações e IA sob medida</strong> — do diagnóstico ao suporte contínuo, direto com quem constrói a solução.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-1">
-                        <a href="#contato" class="gold-gradient-bg w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-white font-extrabold rounded-md text-sm sm:text-base hover:opacity-95 shadow-xl shadow-amber-500/25 transition-all flex items-center justify-center gap-2">
-                            <i data-lucide="calendar-check" class="w-4 h-4"></i>
-                            <span>Agendar Diagnóstico Gratuito</span>
-                        </a>
-                        <a href="#recursos" class="w-full sm:w-auto px-5 sm:px-6 py-3.5 sm:py-4 bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 font-semibold rounded-md text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs">
-                            <span>Ver Nossos Serviços</span>
-                            <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-amber-600"></i>
-                        </a>
-                    </div>
-
-                    <div class="pt-4 sm:pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-[11px] sm:text-xs text-slate-600 text-center sm:text-left">
-                        <div class="flex items-center gap-2 justify-center sm:justify-start">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
-                            <span>Diagnóstico Inicial Gratuito</span>
-                        </div>
-                        <div class="flex items-center gap-2 justify-center sm:justify-start">
-                            <i data-lucide="kanban-square" class="w-4 h-4 text-amber-600 flex-shrink-0"></i>
-                            <span>Projeto 100% Sob Medida</span>
-                        </div>
-                        <div class="flex items-center gap-2 justify-center sm:justify-start">
-                            <i data-lucide="users" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
-                            <span>Suporte Direto com Quem Implementa</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5 min-w-0 relative w-full max-w-sm sm:max-w-md mx-auto flex flex-col items-center">
-                    <!-- Glow background -->
-                    <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/15 via-emerald-500/10 to-amber-500/10 rounded-full blur-3xl -z-10 scale-110 pointer-events-none animate-pulse-slow"></div>
-
-                    <!-- Floating Badge Top: IA Ativa -->
-                    <div class="absolute -top-3 left-2 sm:-left-4 z-20 glass-panel px-3 py-1.5 rounded-full border border-emerald-500/40 shadow-xl flex items-center gap-2 animate-float">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                        <span class="text-[10px] sm:text-xs font-bold text-slate-900">IA Mapeando Processos</span>
-                    </div>
-
-                    <!-- Floating Badge Top Right: Automação implantada -->
-                    <div class="absolute top-12 -right-2 sm:-right-6 z-20 glass-panel-gold px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl border border-amber-400/50 shadow-xl flex items-center gap-2 animate-float-delayed">
-                        <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-600 flex items-center justify-center font-bold text-xs">
-                            <i data-lucide="check-check" class="w-3.5 h-3.5"></i>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-bold text-slate-900">Automação Implantada</div>
-                            <div class="text-[9px] text-emerald-700 font-semibold">Rodando em Produção</div>
-                        </div>
-                    </div>
-
-                    <!-- Floating Badge Bottom Left: Horas economizadas -->
-                    <div class="absolute bottom-10 -left-2 sm:-left-6 z-20 glass-panel px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl border border-amber-300 shadow-xl flex items-center gap-2 animate-float">
-                        <div class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-600 flex items-center justify-center font-bold text-xs">
-                            <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-bold text-amber-900">+23h/mês Economizadas</div>
-                            <div class="text-[9px] text-slate-600 font-medium">Devolvidas ao Time</div>
-                        </div>
-                    </div>
-
-                    <!-- Dashboard Mockup (painel de automação) -->
-                    <div class="relative z-10 w-full glass-panel rounded-2xl border border-slate-200 shadow-2xl overflow-hidden">
-                        <div class="flex items-center gap-1.5 px-4 py-3 border-b border-slate-200 bg-slate-100/60">
-                            <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                            <span class="ml-3 text-[10px] sm:text-[11px] font-mono text-slate-500 truncate">painel-automacao.avancoai</span>
-                        </div>
-                        <div class="p-4 sm:p-6 space-y-2.5 sm:space-y-3">
-                            <div class="flex items-center justify-between text-[10px] sm:text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">
-                                <span>Processos Mapeados</span>
-                                <span class="text-emerald-600">2 automatizados</span>
-                            </div>
-
-                            <div class="flex items-center justify-between p-2.5 sm:p-3 rounded-lg bg-slate-50 border border-slate-200">
-                                <div class="flex items-center gap-2 sm:gap-2.5 min-w-0">
-                                    <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-4 h-4"></i></div>
-                                    <div class="min-w-0">
-                                        <div class="text-[11px] sm:text-xs font-bold text-slate-900 truncate">Cadastro de Pedidos</div>
-                                        <div class="text-[9px] sm:text-[10px] text-slate-500">Antes: 2h/dia manual</div>
-                                    </div>
-                                </div>
-                                <span class="text-[9px] sm:text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-1 rounded-full flex-shrink-0">Automatizado</span>
-                            </div>
-
-                            <div class="flex items-center justify-between p-2.5 sm:p-3 rounded-lg bg-slate-50 border border-slate-200">
-                                <div class="flex items-center gap-2 sm:gap-2.5 min-w-0">
-                                    <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-4 h-4"></i></div>
-                                    <div class="min-w-0">
-                                        <div class="text-[11px] sm:text-xs font-bold text-slate-900 truncate">Conciliação Financeira</div>
-                                        <div class="text-[9px] sm:text-[10px] text-slate-500">Antes: 6h/semana manual</div>
-                                    </div>
-                                </div>
-                                <span class="text-[9px] sm:text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-1 rounded-full flex-shrink-0">Automatizado</span>
-                            </div>
-
-                            <div class="flex items-center justify-between p-2.5 sm:p-3 rounded-lg bg-amber-50 border border-amber-200">
-                                <div class="flex items-center gap-2 sm:gap-2.5 min-w-0">
-                                    <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0"><i data-lucide="loader-circle" class="w-4 h-4 animate-spin"></i></div>
-                                    <div class="min-w-0">
-                                        <div class="text-[11px] sm:text-xs font-bold text-slate-900 truncate">Triagem de Atendimento</div>
-                                        <div class="text-[9px] sm:text-[10px] text-slate-500">Agente de IA sob medida</div>
-                                    </div>
-                                </div>
-                                <span class="text-[9px] sm:text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-1 rounded-full flex-shrink-0">Em Implementação</span>
-                            </div>
-                        </div>
-                        <div class="px-4 sm:px-6 py-3 sm:py-4 border-t border-slate-200 bg-slate-50/60 flex items-center justify-between">
-                            <span class="text-[10px] sm:text-[11px] text-slate-600 font-medium">Tempo devolvido ao time</span>
-                            <span class="text-base sm:text-lg font-black text-amber-600 font-mono">+23h/mês</span>
-                        </div>
-                    </div>
-
-                    <!-- Bottom Conversion Metric -->
-                    <div class="mt-3 glass-panel-gold rounded-full px-4 py-1.5 border border-amber-400/40 flex items-center gap-2 text-[10px] sm:text-xs text-slate-700 font-mono shadow-md">
-                        <span class="flex items-center gap-1 text-emerald-700 font-bold">
-                            <i data-lucide="sparkles" class="w-3 h-3 flex-shrink-0"></i> Última automação implantada
-                        </span>
-                        <span class="text-amber-700 font-bold whitespace-nowrap">esta semana</span>
-                    </div>
-                </div>
-
+    <main id="principal">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="eyebrow">
+              <span class="dot"></span> AUTOMAÇÃO COMERCIAL PARA B2B
+            </p>
+            <h1>
+              Mais foco em fechar.<br /><em>Menos operação<br />manual.</em>
+            </h1>
+            <p class="intro">
+              Seu time constrói relações e conduz negociações. A Avanço AI
+              conecta qualificação, follow-up e CRM para dar continuidade a cada
+              oportunidade.
+            </p>
+            <div class="actions">
+              <a class="button" href="#contato">Mapear minha operação ↗</a
+              ><a class="text-link" href="#solucoes">Conhecer as soluções ↓</a>
             </div>
-        </div>
-    </section>
-
-    <section id="como-funciona" class="reveal-item py-14 sm:py-20 border-t border-slate-200 bg-slate-100/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-                    Como Funciona
-                </span>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
-                    Do Diagnóstico à Automação Rodando na Sua Empresa
-                </h2>
-                <p class="text-slate-600 text-xs sm:text-sm mt-2">
-                    Um processo estruturado — sem contrato engessado, sem pacote fechado.
-                </p>
+            <p class="micro">
+              Diagnóstico gratuito · Projeto sob medida · Atendimento direto
+            </p>
+          </div>
+          <div
+            class="pipeline"
+            aria-label="Exemplo ilustrativo de fluxo comercial"
+          >
+            <div class="panel-head">
+              <span><span class="dot"></span> FLUXO COMERCIAL</span
+              ><span class="tag">Demonstração</span>
             </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-
-                <div class="glass-panel rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm relative">
-                    <span class="text-[11px] font-mono font-bold text-amber-600">Etapa 01</span>
-                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center my-3 border border-amber-100">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Diagnóstico Gratuito</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Mapeamos os processos manuais que mais consomem tempo e dinheiro do seu time.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm relative">
-                    <span class="text-[11px] font-mono font-bold text-amber-600">Etapa 02</span>
-                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center my-3 border border-amber-100">
-                        <i data-lucide="clipboard-list" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Proposta Sob Medida</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Escopo, prazo e investimento definidos e fechados antes de qualquer contrato.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm relative">
-                    <span class="text-[11px] font-mono font-bold text-amber-600">Etapa 03</span>
-                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center my-3 border border-amber-100">
-                        <i data-lucide="workflow" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Implementação</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Construímos a automação ou o agente de IA direto nas ferramentas que você já usa.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm relative">
-                    <span class="text-[11px] font-mono font-bold text-amber-600">Etapa 04</span>
-                    <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center my-3 border border-emerald-100">
-                        <i data-lucide="life-buoy" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Suporte e Evolução</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Acompanhamos o resultado e ajustamos a automação conforme sua operação muda.
-                    </p>
-                </div>
-
+            <div class="pipeline-title">
+              Da primeira conversa<br />ao próximo passo.
             </div>
-        </div>
-    </section>
-
-    <section class="reveal-item py-14 sm:py-20 border-t border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-red-700 bg-red-100 px-3 py-1 rounded-full border border-red-200">
-                    O Custo Oculto
-                </span>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
-                    3 Problemas Que Travam o Crescimento da Sua Empresa
-                </h2>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
-
-                <div class="glass-panel rounded-xl p-6 sm:p-8 border-red-200 shadow-sm">
-                    <div class="w-11 h-11 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-5 border border-red-100">
-                        <i data-lucide="clock" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Horas Perdidas em Tarefas Repetitivas</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Sua equipe gasta horas todo mês copiando dados entre planilhas, sistemas e e-mails — tempo que deveria estar em atividades estratégicas.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-6 sm:p-8 border-amber-200 shadow-sm">
-                    <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-5 border border-amber-100">
-                        <i data-lucide="triangle-alert" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Erros Operacionais por Processo Manual</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Cada etapa feita manualmente é uma chance de erro: pedido duplicado, dado desatualizado, prazo perdido.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-6 sm:p-8 border-blue-200 shadow-sm sm:col-span-2 lg:col-span-1">
-                    <div class="w-11 h-11 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-5 border border-blue-100">
-                        <i data-lucide="eye-off" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Falta de Visibilidade sobre a Operação</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Sem automação, é difícil saber onde o processo trava, quanto tempo cada etapa consome ou o que priorizar.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="recursos" class="reveal-item py-14 sm:py-20 border-t border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-                    Tudo Isso é a Avanço AI
-                </span>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
-                    Uma Parceria. Do Diagnóstico à Automação Rodando.
-                </h2>
-                <p class="text-slate-600 text-xs sm:text-sm mt-2">
-                    Serviços combinados sob medida para a sua operação — sem pacote fechado.
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-
-                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
-                            <i data-lucide="workflow" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">Automação</span>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Automação de Processos Internos</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Conectamos suas ferramentas — planilhas, ERPs, CRMs, e-mail — para eliminar tarefas manuais e repetitivas.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
-                            <i data-lucide="bot" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">IA</span>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Agentes de IA Sob Medida</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Agentes treinados na realidade do seu negócio para atender, triar ou executar tarefas internas.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
-                            <i data-lucide="plug-zap" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">Automação</span>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Integração de Sistemas</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Fazemos suas ferramentas conversarem entre si, sem depender de retrabalho manual.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
-                            <i data-lucide="search" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">Consultoria</span>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Diagnóstico de Oportunidades de IA</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Mapeamos sua operação e mostramos exatamente onde a IA gera retorno real.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
-                            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">Consultoria</span>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Acompanhamento de Resultados</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Medimos o impacto de cada automação: tempo economizado, erros reduzidos, custo evitado.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-6 flex flex-col border border-slate-200 shadow-sm hover:shadow-md transition-all">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-11 h-11 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
-                            <i data-lucide="life-buoy" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-[9px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">Suporte</span>
-                    </div>
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5">Suporte Contínuo</h3>
-                    <p class="text-slate-600 text-xs leading-relaxed">
-                        Ajustamos e evoluímos as automações conforme sua empresa cresce e muda.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="calculadora" class="reveal-item py-14 sm:py-20 border-t border-slate-200 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="glass-panel-gold rounded-xl p-6 sm:p-10 md:p-12 shadow-xl border border-amber-300">
-
-                <div class="text-center mb-8 sm:mb-10">
-                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-                        Simulador Financeiro
-                    </span>
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
-                        Quanto Sua Empresa Pode Economizar Automatizando Processos?
-                    </h2>
-                    <p class="text-slate-600 text-xs sm:text-sm mt-2">
-                        Simule a economia mensal ao automatizar tarefas manuais e devolver esse tempo pro seu time:
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
-
-                    <div class="space-y-5 sm:space-y-6">
-                        <div>
-                            <div class="flex justify-between text-xs sm:text-sm font-semibold mb-2">
-                                <span class="text-slate-700">Horas/semana em tarefas manuais:</span>
-                                <span id="val-appointments" class="text-amber-700 font-mono font-bold text-sm sm:text-base">20h/semana</span>
-                            </div>
-                            <input id="slider-appointments" type="range" min="5" max="80" value="20" step="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500">
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between text-xs sm:text-sm font-semibold mb-2">
-                                <span class="text-slate-700">Custo médio da hora do time:</span>
-                                <span id="val-ticket" class="text-amber-700 font-mono font-bold text-sm sm:text-base">R$ 40,00</span>
-                            </div>
-                            <input id="slider-ticket" type="range" min="20" max="200" value="40" step="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500">
-                        </div>
-                    </div>
-
-                    <div class="bg-amber-100 border border-amber-300 rounded-xl p-5 sm:p-6 text-center space-y-3.5 shadow-md">
-                        <span class="text-[10px] sm:text-xs uppercase font-mono text-slate-600 tracking-wider">Economia Mensal Estimada</span>
-                        <div id="result-revenue" class="text-3xl sm:text-4xl md:text-5xl font-black text-amber-700 font-mono">
-                            +R$ 2.080 /mês
-                        </div>
-                        <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
-                            Devolvendo <strong id="result-patients" class="text-slate-900">52 horas por mês</strong> que hoje viram atraso, retrabalho ou erro.
-                        </p>
-                        <a href="#contato" class="gold-gradient-bg block w-full py-3 sm:py-3.5 text-white font-bold rounded-md text-xs sm:text-sm hover:opacity-95 transition-opacity shadow-md">
-                            Quero Saber Quanto Posso Economizar
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="planos" class="reveal-item py-14 sm:py-20 border-t border-slate-200 bg-slate-50/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-                    Investimento Sob Medida
-                </span>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
-                    Cada Empresa Tem um Processo Diferente. Seu Projeto Também.
-                </h2>
-                <p class="text-slate-600 text-xs sm:text-sm mt-2">
-                    Sem plano fechado, sem mensalidade fixa. Você investe no escopo que faz sentido pro seu momento.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6 sm:gap-8 items-stretch max-w-4xl mx-auto">
-
-                <div class="glass-panel rounded-xl p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-sm">
-                    <div>
-                        <div class="text-[11px] font-mono uppercase text-slate-500 mb-1.5 font-bold">Início Rápido</div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Projeto Pontual</h3>
-                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-3 sm:mt-4 mb-5 pb-5 border-b border-slate-200">
-                            Ideal pra automatizar um processo específico e ver o resultado rápido.
-                        </p>
-                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-6">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Diagnóstico gratuito do processo</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Escopo e prazo fechados antes de começar</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Implementação direto nas suas ferramentas atuais</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600 flex-shrink-0"></i> Suporte durante todo o projeto</li>
-                        </ul>
-                    </div>
-                    <a href="#contato" class="w-full py-3.5 text-center font-bold text-xs sm:text-sm text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-md transition-all border border-slate-300">
-                        Solicitar Diagnóstico Gratuito
-                    </a>
-                </div>
-
-                <div class="glass-panel-gold rounded-xl p-6 sm:p-8 flex flex-col justify-between relative shadow-xl bg-gradient-to-b from-amber-500/10 via-transparent to-transparent border-2 border-amber-400">
-                    <div class="inline-block self-start sm:self-auto sm:absolute -top-3.5 sm:left-1/2 sm:-translate-x-1/2 gold-gradient-bg text-white text-[10px] sm:text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md mb-3 sm:mb-0">
-                        Ideal Pra Times em Crescimento
-                    </div>
-                    <div>
-                        <div class="text-[11px] font-mono uppercase text-amber-800 font-bold mb-1.5">Prioridade e Evolução Contínua</div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Parceria Contínua</h3>
-                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mt-3 sm:mt-4 mb-5 pb-5 border-b border-amber-300/60">
-                            Pra empresas que querem automatizar processo por processo, com prioridade e suporte recorrente.
-                        </p>
-                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-800 mb-6">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Tudo do Projeto Pontual</strong></li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Diagnóstico e priorização contínua de novas automações</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Acompanhamento de indicadores (horas economizadas, erros evitados)</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> <strong>Suporte prioritário</strong> e evolução das automações já implementadas</li>
-                        </ul>
-                    </div>
-                    <a href="#contato" class="w-full py-3.5 sm:py-4 text-center font-bold text-xs sm:text-sm text-white gold-gradient-bg rounded-md shadow-lg hover:opacity-95 transition-opacity">
-                        Falar com um Especialista
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="py-10 sm:py-12">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="glass-panel-gold rounded-xl p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center gap-5 sm:gap-6 text-center sm:text-left border border-emerald-300 shadow-md">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 border border-emerald-300">
-                    <i data-lucide="shield-check" class="w-8 h-8 sm:w-10 sm:h-10"></i>
-                </div>
+            <ol class="flow">
+              <li>
+                <span class="step-icon">01</span>
                 <div>
-                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">Diagnóstico Gratuito, Sem Compromisso</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Antes de qualquer contrato, mapeamos seus processos e mostramos exatamente onde a automação faz sentido — e quanto tempo isso devolve pro seu time. <strong class="text-slate-900 font-bold">Se não fizer sentido pra sua empresa, você não paga nada.</strong>
-                    </p>
+                  <strong>Lead recebido</strong>
+                  <p>Site ou WhatsApp</p>
                 </div>
+                <span class="status">Entrada</span>
+              </li>
+              <li>
+                <span class="step-icon">02</span>
+                <div>
+                  <strong>Contexto organizado</strong>
+                  <p>Perfil, necessidade e momento</p>
+                </div>
+                <span class="status">IA</span>
+              </li>
+              <li>
+                <span class="step-icon">03</span>
+                <div>
+                  <strong>Vendedor com contexto</strong>
+                  <p>Resumo e agendamento</p>
+                </div>
+                <span class="status mint">Humano</span>
+              </li>
+              <li>
+                <span class="step-icon">04</span>
+                <div>
+                  <strong>CRM e follow-up em dia</strong>
+                  <p>Histórico e próxima ação</p>
+                </div>
+                <span class="status">Fluxo</span>
+              </li>
+            </ol>
+            <div class="panel-foot">
+              <span class="dot"></span> Seu processo. Suas regras. Suas
+              ferramentas.
             </div>
+          </div>
         </div>
-    </section>
-
-    <section id="faq" class="reveal-item py-14 sm:py-20 border-t border-slate-200">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-8 sm:mb-12">
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Dúvidas Frequentes sobre Automação e IA</h2>
-                <p class="text-slate-600 text-xs sm:text-sm mt-2">Como funciona a implementação de automação e IA na prática</p>
-            </div>
-
-            <div class="space-y-3 sm:space-y-4">
-                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
-                    <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
-                        <span>Preciso ter equipe técnica ou já ter alguma automação pronta?</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
-                    </div>
-                    <p class="text-slate-600 text-xs mt-3 hidden leading-relaxed">
-                        Não. Mapeamos seu processo do zero e cuidamos de toda a implementação técnica. Você só precisa nos mostrar como o processo funciona hoje.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
-                    <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
-                        <span>A automação funciona com os sistemas que minha empresa já usa?</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
-                    </div>
-                    <p class="text-slate-600 text-xs mt-3 hidden leading-relaxed">
-                        Sim. Trabalhamos integrando com as ferramentas que você já tem — planilhas, CRM, ERP, WhatsApp, e-mail — sem te obrigar a trocar de sistema.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
-                    <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
-                        <span>Como funciona o orçamento, já que não tem plano fixo?</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
-                    </div>
-                    <p class="text-slate-600 text-xs mt-3 hidden leading-relaxed">
-                        Depois do diagnóstico gratuito, você recebe uma proposta com escopo, prazo e investimento fechados antes de qualquer contrato — sem surpresa no meio do caminho.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
-                    <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
-                        <span>Quanto tempo leva pra automação estar rodando?</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
-                    </div>
-                    <p class="text-slate-600 text-xs mt-3 hidden leading-relaxed">
-                        Depende do escopo. Automações pontuais costumam ficar prontas em <strong class="text-slate-900">1 a 3 semanas</strong>; projetos maiores de implementação de IA são combinados etapa por etapa na proposta.
-                    </p>
-                </div>
-
-                <div class="glass-panel rounded-xl p-4 sm:p-5 cursor-pointer faq-toggle border border-slate-200 shadow-xs hover:border-amber-400">
-                    <div class="flex items-center justify-between font-bold text-slate-900 text-xs sm:text-sm gap-2">
-                        <span>E se a automação parar de funcionar ou eu precisar de ajustes?</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-amber-600 transition-transform flex-shrink-0"></i>
-                    </div>
-                    <p class="text-slate-600 text-xs mt-3 hidden leading-relaxed">
-                        Você tem suporte direto com quem implementou a automação — não é um chamado genérico de central de atendimento.
-                    </p>
-                </div>
-            </div>
+        <div class="wrap audience-strip">
+          <span>PARA VENDAS QUE EXIGEM CONTEXTO</span>
+          <p>
+            Consultorias <b>·</b> Recrutamento executivo <b>·</b> Agências B2B
+            <b>·</b> SaaS
+          </p>
         </div>
-    </section>
-
-    <section id="contato" class="reveal-item py-16 sm:py-24 border-t border-slate-200 bg-slate-100/50 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="glass-panel-gold rounded-xl p-6 sm:p-10 md:p-12 shadow-2xl relative border border-amber-300">
-
-                <div class="text-center mb-8 sm:mb-10">
-                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-                        Diagnóstico Gratuito
-                    </span>
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mt-2.5">
-                        Vamos Mapear os Processos Que Estão Travando Sua Empresa?
-                    </h2>
-                    <p class="text-slate-600 text-xs sm:text-sm mt-2 max-w-xl mx-auto">
-                        Preencha os dados abaixo. Em até 1 dia útil, entramos em contato pra agendar um diagnóstico gratuito da sua operação.
-                    </p>
-                </div>
-
-                <form id="contact-form" class="space-y-4 sm:space-y-5 max-w-2xl mx-auto">
-                    <div class="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
-                        <div>
-                            <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">Seu Nome / Cargo</label>
-                            <input type="text" id="form-name" required placeholder="Ex: João Silva / Diretor de Operações" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-100 border border-slate-300 rounded-md text-slate-900 placeholder-slate-600 focus:outline-none focus:border-amber-500 focus:bg-slate-200 text-xs sm:text-sm transition">
-                        </div>
-                        <div>
-                            <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">WhatsApp (com DDD)</label>
-                            <input type="tel" id="form-phone" required placeholder="(11) 99999-9999" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-100 border border-slate-300 rounded-md text-slate-900 placeholder-slate-600 focus:outline-none focus:border-amber-500 focus:bg-slate-200 text-xs sm:text-sm transition">
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
-                        <div>
-                            <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">Nome da Sua Empresa</label>
-                            <input type="text" id="form-company" required placeholder="Ex: Comercial Silva / Grupo Avança" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-100 border border-slate-300 rounded-md text-slate-900 placeholder-slate-600 focus:outline-none focus:border-amber-500 focus:bg-slate-200 text-xs sm:text-sm transition">
-                        </div>
-                        <div>
-                            <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">Área com Mais Processos Manuais</label>
-                            <select id="form-service" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-100 border border-slate-300 rounded-md text-slate-900 focus:outline-none focus:border-amber-500 focus:bg-slate-200 text-xs sm:text-sm transition">
-                                <option value="Financeiro / Faturamento">Financeiro / Faturamento</option>
-                                <option value="Atendimento ao Cliente">Atendimento ao Cliente</option>
-                                <option value="Operações / Backoffice">Operações / Backoffice</option>
-                                <option value="Vendas / CRM">Vendas / CRM</option>
-                                <option value="Outra Área">Outra Área</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="text-[11px] sm:text-xs font-semibold text-slate-700 block mb-1">Quantas pessoas trabalham na sua empresa?</label>
-                        <input type="text" id="form-team" placeholder="Ex: 5 pessoas / 50 pessoas" class="w-full px-3.5 py-2.5 sm:py-3 bg-slate-100 border border-slate-300 rounded-md text-slate-900 placeholder-slate-600 focus:outline-none focus:border-amber-500 focus:bg-slate-200 text-xs sm:text-sm transition">
-                    </div>
-
-                    <button type="submit" class="w-full py-3.5 sm:py-4 gold-gradient-bg text-white font-extrabold rounded-md text-sm sm:text-base hover:opacity-95 transition-opacity shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
-                        <i data-lucide="send" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                        <span>Agendar Meu Diagnóstico Gratuito</span>
-                    </button>
-
-                    <p class="text-center text-[10px] sm:text-[11px] text-slate-500">
-                        🔒 Sem spam. Seus dados são usados exclusivamente para agendar seu diagnóstico gratuito.
-                    </p>
-                </form>
-
-            </div>
+      </section>
+      <section class="section wrap" id="solucoes">
+        <div class="section-heading">
+          <p class="eyebrow">ONDE ENTRAMOS</p>
+          <h2>
+            O próximo negócio precisa<br />de atenção.
+            <em>Não de retrabalho.</em>
+          </h2>
+          <p>
+            Começamos pelo gargalo comercial e implementamos o fluxo necessário
+            para resolvê-lo.
+          </p>
         </div>
-    </section>
-
-    <footer class="border-t border-slate-200 py-10 text-slate-600">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-                <div class="flex items-center gap-2 sm:gap-2.5">
-                    <img src="/assets/favicon.svg" alt="Avanço AI Logo" class="w-8 h-8 rounded-xl shadow-xs shrink-0">
-                    <span class="text-slate-900 font-extrabold text-base sm:text-lg">Avanço <span class="text-amber-500">AI</span></span>
-                </div>
-                <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs text-slate-600 font-medium">
-                    <a href="#como-funciona" class="hover:text-amber-600 transition">Como Funciona</a>
-                    <a href="#recursos" class="hover:text-amber-600 transition">Serviços</a>
-                    <a href="#planos" class="hover:text-amber-600 transition">Investimento</a>
-                    <a href="#contato" class="hover:text-amber-600 transition">Contato</a>
-                </div>
+        <div class="solutions">
+          <article class="solution">
+            <div class="service-number">01 / INBOUND</div>
+            <h3>Uma primeira conversa<br />com mais contexto.</h3>
+            <p>
+              Agentes de IA para acolher novos contatos, entender a demanda e
+              encaminhar oportunidades conforme os critérios do seu time.
+            </p>
+            <ul>
+              <li>Atendimento no WhatsApp ou site</li>
+              <li>Qualificação com perguntas do seu processo</li>
+              <li>Agendamento e passagem para o vendedor</li>
+            </ul>
+            <div class="outcome">
+              Entrega: oportunidade organizada para a conversa comercial.
             </div>
-            <div class="mt-6 pt-5 border-t border-slate-200 text-center text-[11px] text-slate-500">
-                &copy; 2026 Avanço AI. Todos os direitos reservados.
+          </article>
+          <article class="solution">
+            <div class="service-number">02 / PROSPECÇÃO</div>
+            <h3>Pesquisa relevante.<br />Abordagem com propósito.</h3>
+            <p>
+              Organize informações de empresas e decisores para preparar
+              abordagens alinhadas ao perfil de cliente que você procura.
+            </p>
+            <ul>
+              <li>Enriquecimento com fontes autorizadas</li>
+              <li>Priorização conforme seu cliente ideal</li>
+              <li>Sugestões de mensagens para revisão</li>
+            </ul>
+            <div class="outcome">
+              Entrega: contexto útil antes do primeiro contato.
             </div>
+          </article>
+          <article class="solution">
+            <div class="service-number">03 / CRM & FOLLOW-UP</div>
+            <h3>Cada negociação<br />com um próximo passo.</h3>
+            <p>
+              Conecte registros, resumos de reuniões e lembretes para que o
+              histórico comercial acompanhe a negociação.
+            </p>
+            <ul>
+              <li>Resumos de chamadas e atualização do CRM</li>
+              <li>Lembretes e cadências definidas pelo time</li>
+              <li>Retomada de contatos com contexto</li>
+            </ul>
+            <div class="outcome">
+              Entrega: histórico organizado e ações rastreáveis.
+            </div>
+          </article>
         </div>
+        <div class="integrations">
+          <p>Construído em torno das ferramentas que você já usa.</p>
+          <div>
+            WhatsApp <span>HubSpot</span> Pipedrive
+            <span>Google Workspace</span>
+          </div>
+          <small
+            >Integrações definidas no diagnóstico, conforme APIs, permissões e
+            planos disponíveis.</small
+          >
+        </div>
+      </section>
+      <section class="section soft" id="para-quem">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">ESPECIALIZAÇÃO QUE FAZ SENTIDO</p>
+            <h2>Para negócios em que<br /><em>cada conversa conta.</em></h2>
+            <p class="section-copy">
+              Para founders e líderes comerciais com vendas consultivas,
+              serviços de alto valor e uma operação que precisa de continuidade.
+            </p>
+            <a class="text-link" href="#contato"
+              >Encontrar o gargalo do meu time ↗</a
+            >
+          </div>
+          <div class="segments">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>Consultorias empresariais</h3>
+                <p>
+                  Entenda o desafio, o perfil da empresa e o momento de compra
+                  antes da reunião.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>Headhunting & recrutamento executivo</h3>
+                <p>
+                  Organize a prospecção de empresas contratantes e a
+                  continuidade das propostas comerciais.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>Agências de marketing B2B</h3>
+                <p>
+                  Qualifique o escopo e a expectativa do prospect para preparar
+                  uma conversa produtiva.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>04</span>
+              <div>
+                <h3>SaaS B2B</h3>
+                <p>
+                  Direcione pedidos de demonstração com contexto e mantenha o
+                  acompanhamento após a conversa.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section wrap" id="como-funciona">
+        <div class="section-heading">
+          <p class="eyebrow">DO DIAGNÓSTICO À OPERAÇÃO</p>
+          <h2>
+            Clareza antes de construir.<br /><em
+              >Acompanhamento depois de entregar.</em
+            >
+          </h2>
+        </div>
+        <div class="process">
+          <article>
+            <span>01</span>
+            <h3>Mapear</h3>
+            <p>
+              Entendemos o funil, as tarefas manuais e os pontos em que as
+              oportunidades param.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Priorizar</h3>
+            <p>
+              Definimos o primeiro fluxo, os indicadores, o escopo, o prazo e o
+              investimento.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Implementar</h3>
+            <p>
+              Conectamos as ferramentas e validamos cenários reais com seu time
+              antes da entrada em produção.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Acompanhar</h3>
+            <p>
+              Monitoramos o funcionamento e os indicadores acordados. Suporte e
+              evolução conforme o escopo.
+            </p>
+          </article>
+        </div>
+        <div class="trust-bar">
+          <strong>Você mantém o controle.</strong>
+          <p>
+            Critérios de qualificação definidos com seu time, encaminhamento
+            humano e acesso apenas aos dados necessários. Negociações e decisões
+            comerciais continuam com as pessoas.
+          </p>
+        </div>
+      </section>
+      <section class="section dark-section" id="calculadora">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">DIMENSIONE A OPORTUNIDADE</p>
+            <h2>Quanto tempo o operacional<br />ocupa no seu comercial?</h2>
+            <p class="section-copy">
+              Simule um cenário de redução do trabalho manual. Use a estimativa
+              para escolher o que vale investigar no diagnóstico.
+            </p>
+            <p class="micro">
+              Estimativa de capacidade liberada, não promessa de economia
+              financeira ou aumento de receita.
+            </p>
+          </div>
+          <div class="calculator">
+            <label for="hours"
+              >Horas manuais por semana
+              <output id="hours-value">20 h</output></label
+            ><input
+              id="hours"
+              type="range"
+              min="0"
+              max="100"
+              value="20"
+            /><label for="cost"
+              >Custo estimado por hora
+              <output id="cost-value">R$ 40</output></label
+            ><input
+              id="cost"
+              type="range"
+              min="10"
+              max="300"
+              step="10"
+              value="40"
+            /><label for="reduction"
+              >Redução estimada dessas tarefas
+              <output id="reduction-value">30%</output></label
+            ><input
+              id="reduction"
+              type="range"
+              min="0"
+              max="80"
+              step="5"
+              value="30"
+            />
+            <div class="calc-result" aria-live="polite">
+              <strong id="time-result">26 h/mês</strong>
+              <p>
+                de capacidade liberada · equivalente a
+                <span id="money-result">R$ 1.039</span>
+              </p>
+            </div>
+            <small
+              >Cálculo: horas semanais × 4,33 × redução estimada. O equivalente
+              em reais usa o custo/hora informado e não representa redução
+              automática de despesas.</small
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section wrap" id="planos">
+        <div class="section-heading">
+          <p class="eyebrow">INVESTIMENTO SOB MEDIDA</p>
+          <h2>Comece com um fluxo.<br /><em>Evolua com evidência.</em></h2>
+          <p>
+            O orçamento considera ferramentas, integrações e complexidade.
+            Licenças e consumo de serviços externos são detalhados na proposta.
+          </p>
+        </div>
+        <div class="plans">
+          <article>
+            <span class="eyebrow">PRIMEIRO PROJETO</span>
+            <h3>Resolva um gargalo específico.</h3>
+            <p>
+              Um fluxo prioritário, com escopo definido e critérios de aceite
+              combinados antes da implementação.
+            </p>
+            <ul>
+              <li>Diagnóstico da etapa comercial</li>
+              <li>Integração, configuração e testes</li>
+              <li>Orientação de uso para o time</li>
+            </ul>
+            <a class="button secondary" href="#contato"
+              >Conversar sobre meu projeto ↗</a
+            >
+          </article>
+          <article class="featured">
+            <span class="eyebrow">PARCERIA CONTÍNUA</span>
+            <h3>Evolua a operação comercial.</h3>
+            <p>
+              Para quem precisa acompanhar os fluxos e implementar novas
+              melhorias conforme as prioridades do negócio.
+            </p>
+            <ul>
+              <li>Priorização recorrente de oportunidades</li>
+              <li>Acompanhamento dos indicadores definidos</li>
+              <li>Suporte e evolução no escopo contratado</li>
+            </ul>
+            <a class="button" href="#contato">Planejar minha operação ↗</a>
+          </article>
+        </div>
+      </section>
+      <section class="section soft" id="faq">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">ANTES DA PRIMEIRA CONVERSA</p>
+            <h2>Perguntas que<br /><em>merecem clareza.</em></h2>
+          </div>
+          <div class="faqs">
+            <details>
+              <summary>A IA vai substituir meu vendedor?</summary>
+              <p>
+                O foco é apoiar a operação: organizar contexto, responder dentro
+                do escopo e encaminhar contatos. Negociação, exceções e decisões
+                comerciais permanecem com o time.
+              </p>
+            </details>
+            <details>
+              <summary>Preciso trocar de CRM?</summary>
+              <p>
+                Priorizamos as ferramentas que você já utiliza. A viabilidade
+                depende das APIs, permissões e planos disponíveis; isso é
+                verificado antes da proposta.
+              </p>
+            </details>
+            <details>
+              <summary>Vocês fazem disparos em massa no LinkedIn?</summary>
+              <p>
+                A proposta é pesquisa relevante e preparação de abordagens com
+                revisão humana. Não inclui scraping não autorizado, disparos
+                indiscriminados ou formas de contornar as regras da plataforma.
+              </p>
+            </details>
+            <details>
+              <summary>Como são tratados os dados dos leads?</summary>
+              <p>
+                Definimos quais dados são necessários, quem pode acessá-los e
+                como circulam entre as ferramentas. Uso, retenção e
+                responsabilidades são alinhados no projeto.
+              </p>
+            </details>
+            <details>
+              <summary>Quanto custa e quanto tempo leva?</summary>
+              <p>
+                Depende do fluxo, das integrações e da complexidade. Após o
+                diagnóstico, você recebe escopo, prazo e investimento. Custos de
+                ferramentas e consumo de IA são explicitados.
+              </p>
+            </details>
+            <details>
+              <summary>Vocês garantem reuniões ou vendas?</summary>
+              <p>
+                Não garantimos volume de reuniões ou receita. Os indicadores são
+                definidos para o processo implementado, como tempo de resposta,
+                completude do CRM e execução das próximas ações.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section class="section wrap contact" id="contato">
+        <div>
+          <p class="eyebrow">DIAGNÓSTICO COMERCIAL GRATUITO</p>
+          <h2>
+            Onde seu próximo negócio<br /><em>está ficando pelo caminho?</em>
+          </h2>
+          <p class="section-copy">
+            Conte um pouco sobre sua operação. Na primeira conversa, vamos
+            identificar o gargalo prioritário e avaliar se uma automação faz
+            sentido.
+          </p>
+          <div class="contact-note">
+            <span class="dot"></span> Direto com a Avanço AI. Sem compromisso.
+          </div>
+          <a
+            class="text-link"
+            href="https://wa.me/5571996463942"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Prefere conversar direto no WhatsApp? ↗</a
+          >
+        </div>
+        <form id="contact-form">
+          <div class="form-grid">
+            <div>
+              <label for="name">Seu nome</label
+              ><input
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                maxlength="100"
+                placeholder="Como podemos chamar você?"
+              />
+            </div>
+            <div>
+              <label for="company">Empresa</label
+              ><input
+                id="company"
+                name="company"
+                autocomplete="organization"
+                required
+                maxlength="150"
+                placeholder="Nome da empresa"
+              />
+            </div>
+            <div>
+              <label for="phone">WhatsApp com DDD</label
+              ><input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                required
+                inputmode="tel"
+                maxlength="20"
+                placeholder="(71) 99999-9999"
+              />
+            </div>
+            <div>
+              <label for="segment">Seu segmento</label
+              ><select id="segment" name="segment" required>
+                <option value="">Selecione</option>
+                <option>Consultoria empresarial</option>
+                <option>Recrutamento executivo</option>
+                <option>Agência de marketing B2B</option>
+                <option>SaaS B2B</option>
+                <option>Outro negócio B2B</option>
+              </select>
+            </div>
+            <div>
+              <label for="team">Pessoas no comercial</label
+              ><select id="team" name="team">
+                <option>1 a 3</option>
+                <option>4 a 10</option>
+                <option>11 a 30</option>
+                <option>Mais de 30</option>
+              </select>
+            </div>
+            <div>
+              <label for="crm">CRM atual (opcional)</label
+              ><input
+                id="crm"
+                name="crm"
+                maxlength="100"
+                placeholder="Ex.: HubSpot, Pipedrive"
+              />
+            </div>
+          </div>
+          <label for="challenge">Qual é o principal gargalo?</label
+          ><select id="challenge" name="challenge" required>
+            <option value="">Selecione</option>
+            <option>Atendimento e qualificação de leads</option>
+            <option>Pesquisa e preparação da prospecção</option>
+            <option>Follow-up e retomada de oportunidades</option>
+            <option>Atualização e organização do CRM</option>
+            <option>Preciso identificar a prioridade</option></select
+          ><button class="button" type="submit">
+            Continuar no WhatsApp ↗
+          </button>
+          <p class="micro">
+            Os dados serão incluídos em uma mensagem no WhatsApp. Você poderá
+            revisá-la antes de enviar. Usaremos as informações para atender sua
+            solicitação.
+          </p>
+          <noscript
+            ><p>
+              Para solicitar seu diagnóstico, use o link direto do WhatsApp ao
+              lado.
+            </p></noscript
+          >
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap footer">
+        <a class="brand" href="#"
+          ><img src="/assets/favicon.svg" width="30" height="30" alt="" />Avanço
+          <span>AI</span></a
+        >
+        <p>IA aplicada à continuidade do seu comercial.</p>
+        <span>© 2026 Avanço AI</span>
+      </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-
-            const itens = document.querySelectorAll('.reveal-item');
-            if (!('IntersectionObserver' in window)) {
-                itens.forEach(el => el.classList.add('active'));
-            } else {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('active');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-                itens.forEach(el => observer.observe(el));
-
-                setTimeout(() => {
-                    document.querySelectorAll('.reveal-item:not(.active)').forEach(el => {
-                        const r = el.getBoundingClientRect();
-                        if (r.top < window.innerHeight * 1.5) el.classList.add('active');
-                    });
-                }, 2500);
-            }
-
-            const menuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-                document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-            }
-
-            document.querySelectorAll('.faq-toggle').forEach(card => {
-                card.addEventListener('click', () => {
-                    const p = card.querySelector('p');
-                    const icon = card.querySelector('i');
-                    const isHidden = p.classList.contains('hidden');
-
-                    document.querySelectorAll('.faq-toggle p').forEach(item => item.classList.add('hidden'));
-                    document.querySelectorAll('.faq-toggle i').forEach(item => item.style.transform = 'rotate(0deg)');
-
-                    if (isHidden) {
-                        p.classList.remove('hidden');
-                        if (icon) icon.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-
-            const sliderAppts = document.getElementById('slider-appointments');
-            const sliderTicket = document.getElementById('slider-ticket');
-            const valAppts = document.getElementById('val-appointments');
-            const valTicket = document.getElementById('val-ticket');
-            const resultRevenue = document.getElementById('result-revenue');
-            const resultPatients = document.getElementById('result-patients');
-
-            function updateCalculator() {
-                if (!sliderAppts || !sliderTicket) return;
-                const hoursWeek = parseInt(sliderAppts.value);
-                const hourlyCost = parseInt(sliderTicket.value);
-
-                valAppts.textContent = `${hoursWeek}h/semana`;
-                valTicket.textContent = `R$ ${hourlyCost.toLocaleString('pt-BR')},00`;
-
-                const recoveredHours = Math.max(4, Math.round(hoursWeek * 4.33 * 0.6));
-                const monthlySavings = recoveredHours * hourlyCost;
-
-                resultRevenue.textContent = '+R$ ' + monthlySavings.toLocaleString('pt-BR') + ' /mês';
-                resultPatients.textContent = `${recoveredHours} horas por mês`;
-            }
-
-            if (sliderAppts && sliderTicket) {
-                sliderAppts.addEventListener('input', updateCalculator);
-                sliderTicket.addEventListener('input', updateCalculator);
-                updateCalculator();
-            }
-
-            const form = document.getElementById('contact-form');
-            if (form) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const name = document.getElementById('form-name').value;
-                    const phone = document.getElementById('form-phone').value;
-                    const company = document.getElementById('form-company').value;
-                    const service = document.getElementById('form-service').value;
-                    const team = document.getElementById('form-team').value;
-
-                    const text = encodeURIComponent(
-                        `Olá! Gostaria de agendar um diagnóstico gratuito para minha empresa.\n\n` +
-                        `*Contato:* ${name}\n` +
-                        `*WhatsApp:* ${phone}\n` +
-                        `*Empresa:* ${company}\n` +
-                        `*Área com mais processos manuais:* ${service}\n` +
-                        `*Tamanho da equipe:* ${team || 'Não informado'}`
-                    );
-
-                    window.open(`https://api.whatsapp.com/send?phone=5511999999999&text=${text}`, '_blank');
-                });
-            }
-        });
-    </script>
-</body>
+  </body>
 </html>
