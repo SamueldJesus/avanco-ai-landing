@@ -1,58 +1,28 @@
-# Avanço AI — Landing Page
+# Avanço AI — automação comercial B2B
 
-Landing page oficial da **Avanço AI**, automação de processos e implementação de IA sob medida para empresas. O site apresenta a proposta de valor, um simulador de horas/economia, o modelo de investimento (sob orçamento) e um formulário que gera um lead direto no WhatsApp da equipe comercial.
+Landing page para consultorias empresariais, recrutamento executivo, agências de marketing B2B e SaaS. Oferta concentrada em atendimento e qualificação inbound, preparação de prospecção e organização de CRM/follow-up.
 
-**[avancoai.com.br](https://avancoai.com.br)**
+HTML estático, CSS compilado com Tailwind e JavaScript nativo. Preserva a hospedagem existente na Vercel e os ativos de marca. Temas claro/escuro acompanham o sistema.
 
-## Sobre o design
+## Desenvolvimento
 
-A interface segue o **Design System da Linear** (linear.app): canvas quase-preto, tipografia Inter com peso 510 como padrão de ênfase, um único acento cromático (indigo-violeta) e superfícies translúcidas com bordas brancas quase invisíveis no lugar de sombras tradicionais.
+- `npm ci`
+- `npm run build:css` para atualizar o CSS versionado após alterações.
+- `python -m http.server 8765 --bind 127.0.0.1` para servir a página localmente.
 
-| | |
-| --- | --- |
-| **Canvas** | `#08090a` (fundo) → `#0f1011` (painéis) → `#191a1b` (superfícies elevadas) |
-| **Tipografia** | Inter Variable, features `cv01`/`ss03`, pesos 400 / 510 / 590 (nunca 700) |
-| **Acento** | Indigo `#5e6ad2` / Violeta `#7170ff` — reservado a CTAs e estados interativos |
-| **Bordas** | Branco translúcido `rgba(255,255,255,.05–.08)`, nunca cor sólida sobre fundo escuro |
-| **Raio** | 6px em botões/inputs, 8–12px em cards, pílula (`rounded-full`) só em tags e badges |
+## Arquivos
 
-A paleta antiga (dourado/âmbar em tema claro) foi inteiramente substituída, mas o **HTML manteve as mesmas classes Tailwind** (`amber-*`, `slate-*`) — a mudança de tema aconteceu na escala de cores do [`tailwind.config.js`](tailwind.config.js), não na marcação. Isso significa que qualquer ajuste futuro de cor é feito em um único lugar.
+- `index.html`: conteúdo, metadados, navegação, FAQ e formulário.
+- `src/input.css`: estilos responsivos e tokens de marca.
+- `assets/style.css`: resultado compilado, incluído no Git.
+- `assets/site.js`: menu, simulação e encaminhamento ao WhatsApp.
 
-## Stack
+## Captação e simulação
 
-- **HTML estático**, sem framework de frontend
-- **Tailwind CSS** (compilado, não via CDN — ver seção de build abaixo)
-- **[Lucide Icons](https://lucide.dev)** via CDN
-- Fonte **Inter** (Google Fonts) + **JetBrains Mono** para números/dados
+O formulário abre uma mensagem revisável no WhatsApp comercial **+55 71 99646-3942**, confirmado pelo proprietário. Não envia mensagens automaticamente e não salva leads em servidor ou armazenamento local. Há link direto como alternativa sem JavaScript.
 
-## Estrutura
+A simulação utiliza horas semanais × 4,33 × percentual escolhido. O valor financeiro expressa capacidade equivalente, não economia garantida. O fluxo da primeira seção é identificado como demonstração; não há métricas de clientes ou testemunhos inventados.
 
-```
-├── index.html                 # Landing page principal
-├── tailwind.config.js         # Paleta, tipografia e tokens do design system
-├── src/input.css              # Fonte do CSS (Tailwind + estilos próprios)
-├── assets/
-│   ├── style.css              # CSS compilado e versionado (é o que o site consome)
-│   ├── whatsapp-mockup.png    # Não referenciado mais — hero usa mockup em HTML/CSS puro
-│   └── favicon*.{svg,png,ico} # Ícones
-└── package.json
-```
+## Publicação
 
-## Rodando localmente
-
-```bash
-npm install
-npm run watch:css   # recompila assets/style.css a cada alteração
-```
-
-Em outro terminal, sirva os arquivos estáticos (qualquer servidor HTTP simples funciona):
-
-```bash
-npx serve .
-```
-
-> **Importante:** o Tailwind aqui é **compilado**, não carregado via CDN. Se você adicionar ou alterar uma classe do Tailwind em `index.html`, rode `npm run build:css` (ou deixe o `watch:css` ativo) — caso contrário a classe nova não existe em `assets/style.css` e simplesmente não aplica nenhum estilo. O CSS gerado é versionado de propósito para que o deploy continue 100% estático, sem etapa de build no servidor.
-
-## Deploy
-
-Site 100% estático — o deploy na Vercel (ou qualquer host estático) não precisa de build step, já que `assets/style.css` já vem compilado no repositório. Basta publicar a raiz do projeto.
+Preservar o projeto Vercel ligado ao repositório. Publicar a raiz estática com o CSS compilado; não migrar domínio ou criar infraestrutura adicional. Mudanças em branches permitem revisão antes de integrar à main.
