@@ -9,12 +9,8 @@
       <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#F59E0B" flood-opacity="0.5"/>
     </filter>
   </defs>
-
-  <!-- Background rounded squircle -->
   <rect width="512" height="512" rx="130" fill="#080C14"/>
   <rect x="10" y="10" width="492" height="492" rx="120" fill="none" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="12"/>
-
-  <!-- Gold Emblem: Ascending Double Chevrons + AI Sparkle -->
   <g filter="url(#glow)">
     <path d="M120 310 L256 174 L392 310" fill="none" stroke="url(#goldGrad)" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M154 396 L256 294 L358 396" fill="none" stroke="url(#goldGrad)" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
